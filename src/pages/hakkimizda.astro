@@ -1,0 +1,140 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Hakkımızda">
+	<section class="page-header">
+		<div class="container">
+			<span>KARTAL YAMAN HUKUK</span>
+			<h1>Hakkımızda</h1>
+		</div>
+	</section>
+
+	<section class="about-content">
+		<div class="container content-grid">
+			<div class="main-text">
+				<h2>Hukukun Üstünlüğüne Adanmış Yıllar</h2>
+				<p>Kartal Yaman Hukuk Bürosu, kurulduğu günden bu yana hukukun üstünlüğü, adalet ve hakkaniyet ilkelerinden ödün vermeden müvekkillerine hizmet sunmaktadır. Ulusal ve uluslararası mevzuata tam hakimiyetimizle, en karmaşık hukuki uyuşmazlıklarda bile şeffaf ve sonuç odaklı bir yaklaşım benimsiyoruz.</p>
+				<p>Temel gayemiz, müvekkillerimizin hukuki risklerini en aza indirmek ve karşılaştıkları sorunlara en hızlı, en güvenilir çözümleri üretmektir. Her dosyayı kendi özelinde titizlikle inceliyor, mesleki sır ve gizlilik esaslarına sonuna kadar sadık kalıyoruz.</p>
+				
+				<div class="quote-box">
+					<p>"Adalet, gücün değil, haklının yanında olmaktır. Bizim işimiz bu hakkı teslim almaktır."</p>
+				</div>
+			</div>
+			
+			<div class="side-content">
+				<div class="values-box">
+					<h3>Temel Değerlerimiz</h3>
+					<ul>
+						<li><strong>Şeffaflık:</strong> Sürecin her aşamasında müvekkili bilgilendirme.</li>
+						<li><strong>Gizlilik:</strong> Avukat-müvekkil ilişkisinde mutlak sır saklama yükümlülüğü.</li>
+						<li><strong>Dinamizm:</strong> Değişen mevzuata ve güncel içtihatlara anında adaptasyon.</li>
+						<li><strong>Çözüm Odaklılık:</strong> İhtilafları uzatmadan, en rasyonel yoldan çözüme kavuşturma.</li>
+					</ul>
+				</div>
+                <img src="/images/about_1.jpg" alt="Ofis Detay" class="side-img" />
+			</div>
+		</div>
+	</section>
+</Layout>
+
+<style>
+	.container { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
+	
+	/* PAGE HEADER (Ortak İç Sayfa Başlığı) */
+	.page-header {
+		background-color: var(--dark-green);
+		padding: 80px 0;
+		text-align: center;
+		color: var(--white);
+	}
+	.page-header span {
+		color: var(--gold);
+		font-size: 0.8rem;
+		letter-spacing: 3px;
+		text-transform: uppercase;
+		font-weight: 600;
+		display: block;
+		margin-bottom: 10px;
+	}
+	.page-header h1 {
+		font-family: 'Playfair Display', serif;
+		font-size: 3rem;
+		color: var(--white);
+	}
+
+	/* İÇERİK KISMI */
+	.about-content {
+		padding: 50px 0;
+		background-color: var(--bg-cream);
+	}
+	.content-grid {
+		display: grid;
+		grid-template-columns: 3fr 2fr; /* 60% Sol, 40% Sağ */
+		gap: 60px;
+	}
+	.main-text h2 {
+		font-family: 'Playfair Display', serif;
+		font-size: 2.2rem;
+		color: var(--dark-green);
+		margin-bottom: 30px;
+	}
+	.main-text p {
+		font-size: 1.05rem;
+		line-height: 1.8;
+		margin-bottom: 25px;
+		color: var(--text-main);
+	}
+	.quote-box {
+		background-color: #F3F4F1;
+		border-left: 4px solid var(--gold);
+		padding: 30px;
+		margin-top: 40px;
+		font-family: 'Playfair Display', serif;
+		font-size: 1.3rem;
+		color: var(--dark-green);
+		font-style: italic;
+	}
+
+	.values-box {
+		background-color: var(--white);
+		padding: 40px;
+		border-radius: 4px;
+		box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+		margin-bottom: 30px;
+	}
+	.values-box h3 {
+		font-size: 1.4rem;
+		color: var(--dark-green);
+		margin-bottom: 20px;
+		border-bottom: 1px solid #eee;
+		padding-bottom: 15px;
+	}
+	.values-box ul {
+		list-style: none;
+	}
+	.values-box li {
+		margin-bottom: 15px;
+		font-size: 0.95rem;
+		line-height: 1.6;
+		color: var(--text-muted);
+	}
+	.values-box li strong {
+		color: var(--dark-green);
+	}
+    .side-img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 4px;
+    }
+
+	@media (max-width: 992px) {
+		.content-grid { grid-template-columns: 1fr; gap: 40px; }
+	}
+	@media (max-width: 768px) {
+		.page-header { padding: 60px 0; }
+		.page-header h1 { font-size: 2.5rem; }
+		.main-text h2 { font-size: 1.8rem; }
+	}
+</style>

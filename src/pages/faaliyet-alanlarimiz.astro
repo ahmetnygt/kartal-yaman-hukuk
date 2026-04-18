@@ -1,0 +1,181 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const calismaAlanlari = [
+  {
+    title: "Şirketler ve Ticaret Hukuku",
+    description: "Şirket kurulumundan başlayıp, günlük ticari işlerde, hisse devrinde ve sözleşmelerde esnafın ve şirketin her türlü hukuki derdini çözeriz."
+  },
+  {
+    title: "Sözleşmeler Hukuku",
+    description: "Mal alım satımından ortaklık sözleşmelerine kadar, sonradan baş ağrıtmayacak, sağlam ve net sözleşmeler hazırlarız."
+  },
+  {
+    title: "İş ve Sosyal Güvenlik Hukuku",
+    description: "İşçi-işveren uyuşmazlıkları, iş kazaları ve arabuluculuk süreçlerinde her iki tarafın da hakkını koruyan net çözümler."
+  },
+  {
+    title: "Ceza ve İnfaz Hukuku",
+    description: "Soruşturma ve kovuşturma aşamalarında, müvekkilin hakkını sonuna kadar, büyük bir gizlilik ve titizlikle savunuruz."
+  },
+  {
+    title: "Gayrimenkul Hukuku",
+    description: "Tapu iptal, tescil, tahliye ve kira uyuşmazlıklarında; mülk sahibinin veya kiracının hakkını masada bırakmayız."
+  },
+  {
+    title: "Aile ve Miras Hukuku",
+    description: "Boşanma, nafaka, velayet ve miras paylaşımı gibi hassas konularda, ailenin mahremiyetini koruyarak en hızlı sonucu alırız."
+  },
+  {
+    title: "İcra ve İflas Hukuku",
+    description: "Alacağın tahsili veya haksız icra takiplerine karşı durma konusunda hızlı ve etkili haciz/kaldırma işlemleri."
+  }
+];
+---
+
+<Layout title="Çalışma Alanlarımız | Kartal Yaman Hukuk">
+  <main class="alanlar-sayfasi">
+    <div class="konteyner">
+      
+      <div class="baslik-alani">
+        <h1>Çalışma Alanlarımız</h1>
+        <div class="kirmizi-cizgi"></div>
+        <p>Müvekkillerimizin hakkını, kendi hakkımız gibi savunur; her türlü hukuki süreçte şeffaf, samimi ve sonuç odaklı hizmet veririz.</p>
+      </div>
+
+      <div class="grid-yapisi">
+        {calismaAlanlari.map((alan) => (
+          <div class="kart">
+            <div class="kart-icerik">
+              <div class="ikon-kutu">
+                <span>⚖️</span>
+              </div>
+              <h3>{alan.title}</h3>
+              <p>{alan.description}</p>
+            </div>
+            <div class="kart-alt">
+              <a href="#">Detaylı İncele ➔</a>
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </main>
+</Layout>
+
+<style>
+  /* Saf, Katıksız ve Jilet Gibi CSS */
+  .alanlar-sayfasi {
+    background-color: #f9fafb;
+    padding: 60px 0;
+    min-height: 100vh;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .konteyner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .baslik-alani {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .baslik-alani h1 {
+    font-size: 2.5rem;
+    color: #111827;
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
+
+  .kirmizi-cizgi {
+    width: 80px;
+    height: 4px;
+    background-color: #b91c1c; /* Ağır ve tok bir kan kırmızısı */
+    margin: 0 auto 20px auto;
+  }
+
+  .baslik-alani p {
+    font-size: 1.1rem;
+    color: #4b5563;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .grid-yapisi {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+  }
+
+  .kart {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+  }
+
+  .kart:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .kart-icerik {
+    padding: 30px;
+    flex-grow: 1;
+  }
+
+  .ikon-kutu {
+    width: 50px;
+    height: 50px;
+    background-color: #fef2f2;
+    color: #b91c1c;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  .kart-icerik h3 {
+    font-size: 1.25rem;
+    color: #111827;
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
+
+  .kart-icerik p {
+    color: #4b5563;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .kart-alt {
+    background-color: #f9fafb;
+    padding: 15px 30px;
+    border-top: 1px solid #e5e7eb;
+    margin-top: auto;
+  }
+
+  .kart-alt a {
+    color: #b91c1c;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s ease;
+  }
+
+  .kart-alt a:hover {
+    color: #7f1d1d;
+  }
+</style>

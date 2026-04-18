@@ -1,0 +1,75 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+// Tüm makaleleri çekip tarihe göre yeninden eskiye sıralıyoruz
+const butunMakaleler = await getCollection('makaleler');
+const siraliMakaleler = butunMakaleler.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<Layout title="Hukuki Makaleler">
+  <main class="container">
+    <header class="page-header">
+      <h1>Hukuki Makaleler</h1>
+      <p>Güncel hukuki gelişmeler ve bilgilendirici içerikler.</p>
+    </header>
+
+    <div class="article-grid">
+      {siraliMakaleler.map((makale) => (
+        <article class="article-card">
+          <h2><a href={`/makaleler/${makale.slug}`}>{makale.data.title}</a></h2>
+          <div class="meta">
+            <span>{makale.data.author}</span> | 
+            <time>{makale.data.date.toLocaleDateString('tr-TR')}</time>
+          </div>
+          <p>{makale.data.description}</p>
+          <a href={`/makaleler/${makale.slug}`} class="read-more">Devamını Oku &rarr;</a>
+        </article>
+      ))}
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+  .page-header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  .article-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+  }
+  .article-card {
+    background: #fff;
+    padding: 30px;
+    border-left: 4px solid var(--primary-navy);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease;
+  }
+  .article-card:hover {
+    transform: translateY(-5px);
+  }
+  .article-card h2 a {
+    color: var(--primary-navy);
+    text-decoration: none;
+    font-size: 1.25rem;
+  }
+  .meta {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin: 10px 0;
+  }
+  .read-more {
+    display: inline-block;
+    margin-top: 15px;
+    color: var(--primary-gold);
+    text-decoration: none;
+    font-weight: 500;
+  }
+</style>
