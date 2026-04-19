@@ -80,11 +80,11 @@ const currentPath = pathname.replace(/\/$/, ""); // Sondaki slash'i temizle
 
                 <div class="footer-col">
                     <h4>HİZMETLERİMİZ</h4>
-                    <ul class="footer-links">
-                        <li><a href="/faaliyet-alanlari">Ceza Hukuku</a></li>
-                        <li><a href="/faaliyet-alanlari">İş Hukuku</a></li>
-                        <li><a href="/faaliyet-alanlari">Aile Hukuku</a></li>
-                    </ul>
+                        <ul class="footer-links">
+                            <li><a href="/faaliyet-alanlarimiz">Ceza Hukuku</a></li>
+                            <li><a href="/faaliyet-alanlarimiz">İş Hukuku</a></li>
+                            <li><a href="/faaliyet-alanlarimiz">Aile Hukuku</a></li>
+                        </ul>
                 </div>
 
                 <div class="footer-col">
@@ -107,7 +107,18 @@ const currentPath = pathname.replace(/\/$/, ""); // Sondaki slash'i temizle
                 </div>
             </div>
         </footer>
-	</body>
+	<script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
+  </body>
 </html>
 
 <style>
