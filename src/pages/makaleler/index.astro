@@ -17,13 +17,13 @@ const siraliMakaleler = butunMakaleler.sort((a, b) => b.data.date.valueOf() - a.
     <div class="article-grid">
       {siraliMakaleler.map((makale) => (
         <article class="article-card">
-          <h2><a href={`/makaleler/${makale.slug}`}>{makale.data.title}</a></h2>
+          <h2><a href={`/makaleler/${makale.id}`}>{makale.data.title}</a></h2>
           <div class="meta">
             <span>{makale.data.author}</span> | 
             <time>{makale.data.date.toLocaleDateString('tr-TR')}</time>
           </div>
           <p>{makale.data.description}</p>
-          <a href={`/makaleler/${makale.slug}`} class="read-more">Devamını Oku &rarr;</a>
+          <a href={`/makaleler/${makale.id}`} class="read-more">Devamını Oku &rarr;</a>
         </article>
       ))}
     </div>
@@ -45,31 +45,37 @@ const siraliMakaleler = butunMakaleler.sort((a, b) => b.data.date.valueOf() - a.
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 30px;
   }
+  /* src/pages/makaleler/index.astro içindeki stili güncelle */
   .article-card {
-    background: #fff;
+    background: var(--white);
     padding: 30px;
-    border-left: 4px solid var(--primary-navy);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    transition: transform 0.2s ease;
+    border-left: 4px solid var(--dark-green); /* Burayı yeşil yaptık */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03); /* Gölgeyi yumuşattık */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
   .article-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
   }
   .article-card h2 a {
-    color: var(--primary-navy);
+    color: var(--dark-green); /* Burayı da yeşil yaptık */
     text-decoration: none;
     font-size: 1.25rem;
+    font-family: 'Playfair Display', serif; /* Ağırlık kattık */
+  }
+  .read-more {
+    display: inline-block;
+    margin-top: 15px;
+    color: var(--gold); /* Burası da altın sarısı oldu */
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
   }
   .meta {
     font-size: 0.85rem;
     color: var(--text-muted);
     margin: 10px 0;
-  }
-  .read-more {
-    display: inline-block;
-    margin-top: 15px;
-    color: var(--primary-gold);
-    text-decoration: none;
-    font-weight: 500;
   }
 </style>
