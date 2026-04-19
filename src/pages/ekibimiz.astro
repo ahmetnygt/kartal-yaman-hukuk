@@ -1,151 +1,85 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const teamMembers = [
+  {
+    name: "Av. Kartal Yaman",
+    title: "Kurucu Ortak",
+    desc: "Ceza Hukuku ve Şirketler Hukuku alanında 15 yılı aşkın tecrübesiyle büromuzun kurucusudur.",
+    image: "/images/teammember.jpg"
+  },
+  {
+    name: "Av. Zeynep Demir",
+    title: "Kıdemli Avukat",
+    desc: "Aile ve Miras Hukuku uyuşmazlıklarında uzmanlaşmış, arabuluculuk siciline kayıtlı avukatımızdır.",
+    image: "/images/teammember.jpg"
+  },
+  {
+    name: "Av. Burak Yılmaz",
+    title: "Avukat",
+    desc: "İş Hukuku ve İcra-İflas hukuku alanında müvekkillerimize dinamik ve hızlı çözümler sunmaktadır.",
+    image: "/images/teammember.jpg"
+  }
+];
 ---
 
 <Layout title="Ekibimiz">
-	<section class="page-header">
-		<div class="container">
-			<span>PROFESYONEL KADRO</span>
-			<h1>Ekibimiz</h1>
-		</div>
-	</section>
+  <section class="page-header">
+    <div class="container">
+      <h1>Hukuk Kadromuz</h1>
+      <p>Alanında uzman, tecrübeli ve dinamik avukat kadromuzla hakkınızı sonuna kadar savunuyoruz.</p>
+    </div>
+  </section>
 
-	<section class="team-section">
-		<div class="container">
-			<div class="team-intro">
-				<p>Alanında uzman, dinamik ve tecrübeli avukat kadromuzla, her bir dosyaya özveriyle yaklaşıyor; müvekkillerimizin haklarını en üst seviyede savunuyoruz.</p>
-			</div>
-
-			<div class="team-grid">
-				<div class="team-card">
-					<div class="img-wrapper">
-						<img src="/images/teammember.jpg" alt="Av. Kartal Yaman" />
-					</div>
-					<div class="member-info">
-						<h3>Av. Kartal Yaman</h3>
-						<span class="title">Kurucu Avukat</span>
-						<p>Ceza Hukuku ve Şirketler Hukuku alanında 15 yıllık tecrübe.</p>
-						<a href="mailto:kartal@kartalyamanhukuk.com" class="email-link">kartal@kartalyamanhukuk.com</a>
-					</div>
-				</div>
-
-				<div class="team-card">
-					<div class="img-wrapper">
-						<img src="/images/teammember.jpg" alt="Av. Ayşe Yılmaz" />
-					</div>
-					<div class="member-info">
-						<h3>Av. Ayşe Yılmaz</h3>
-						<span class="title">Kıdemli Avukat</span>
-						<p>İş Hukuku ve Aile Hukuku uyuşmazlıklarında uzman arabulucu.</p>
-						<a href="mailto:ayse@kartalyamanhukuk.com" class="email-link">ayse@kartalyamanhukuk.com</a>
-					</div>
-				</div>
-
-				<div class="team-card">
-					<div class="img-wrapper">
-						<img src="/images/teammember.jpg" alt="Av. Mehmet Demir" />
-					</div>
-					<div class="member-info">
-						<h3>Av. Mehmet Demir</h3>
-						<span class="title">Avukat</span>
-						<p>Bilişim Hukuku ve İcra-İflas süreçlerinde operasyon yöneticisi.</p>
-						<a href="mailto:mehmet@kartalyamanhukuk.com" class="email-link">mehmet@kartalyamanhukuk.com</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+  <section class="team-section">
+    <div class="container">
+      <div class="team-grid">
+        {teamMembers.map((member) => (
+          <div class="team-card">
+            <div class="card-image">
+              <img src={member.image} alt={member.name} />
+              <div class="image-overlay">
+                <a href="mailto:info@kartalyamanhukuk.com">İletişime Geç</a>
+              </div>
+            </div>
+            <div class="card-info">
+              <h3>{member.name}</h3>
+              <span class="member-title">{member.title}</span>
+              <p>{member.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
 </Layout>
 
 <style>
-	.container { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
-	
-	/* PAGE HEADER (Hakkımızda ile aynı) */
-	.page-header { background-color: var(--dark-green); padding: 80px 0; text-align: center; color: var(--white); }
-	.page-header span { color: var(--gold); font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 600; display: block; margin-bottom: 10px; }
-	.page-header h1 { font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--white); }
+  .page-header { background-color: var(--dark-green); color: var(--white); padding: 50px 15px; text-align: center; }
+  .page-header h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 15px; color: var(--white); }
+  .page-header p { color: #A0B0AA; max-width: 650px; margin: 0 auto; line-height: 1.8; font-size: 1.1rem; }
 
-	/* EKİP LİSTESİ */
-	.team-section { padding: 50px 0; background-color: var(--bg-cream); }
-	.team-intro { max-width: 700px; margin: 0 auto 60px; text-align: center; font-size: 1.1rem; color: var(--text-muted); line-height: 1.8; }
-	
-	.team-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-		gap: 40px;
-	}
-	
-	.team-card {
-		background: var(--white);
-		border-radius: 4px;
-		overflow: hidden;
-		box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-		transition: transform 0.3s ease;
-	}
-	.team-card:hover {
-		transform: translateY(-10px);
-		box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-	}
-	.img-wrapper {
-		width: 100%;
-		height: 350px;
-		overflow: hidden;
-	}
-	.img-wrapper img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		object-position: top; /* Kafalar kesilmesin */
-		transition: transform 0.5s ease;
-	}
-	.team-card:hover .img-wrapper img {
-		transform: scale(1.05);
-	}
-	.member-info {
-		padding: 30px;
-		text-align: center;
-		border-bottom: 3px solid transparent;
-		transition: border-color 0.3s ease;
-	}
-	.team-card:hover .member-info {
-		border-bottom: 3px solid var(--gold);
-	}
-	.member-info h3 {
-		font-family: 'Playfair Display', serif;
-		font-size: 1.5rem;
-		color: var(--dark-green);
-		margin-bottom: 5px;
-	}
-	.member-info .title {
-		display: block;
-		color: var(--gold);
-		font-size: 0.85rem;
-		text-transform: uppercase;
-		letter-spacing: 1px;
-		font-weight: 600;
-		margin-bottom: 15px;
-	}
-	.member-info p {
-		font-size: 0.9rem;
-		color: var(--text-muted);
-		margin-bottom: 20px;
-		line-height: 1.6;
-	}
-	.email-link {
-		font-size: 0.85rem;
-		color: var(--dark-green);
-		font-weight: 500;
-		text-decoration: underline;
-		text-decoration-color: var(--gold);
-		text-underline-offset: 4px;
-	}
-	.email-link:hover {
-		color: var(--gold);
-	}
+  .team-section { padding: 50px; background-color: var(--bg-cream); }
+  .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
 
-	@media (max-width: 768px) {
-		.page-header { padding: 60px 0; }
-		.page-header h1 { font-size: 2.5rem; }
-		.img-wrapper { height: 300px; }
-	}
+  .team-card { background: var(--white); border-radius: 4px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.03); transition: transform 0.3s ease; }
+  .team-card:hover { transform: translateY(-5px); }
+
+  .card-image { position: relative; overflow: hidden; aspect-ratio: 3/4; }
+  .card-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+  .team-card:hover .card-image img { transform: scale(1.05); }
+  
+  .image-overlay { position: absolute; inset: 0; background: rgba(20, 36, 31, 0.8); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease; }
+  .team-card:hover .image-overlay { opacity: 1; }
+  .image-overlay a { color: var(--white); border: 1px solid var(--gold); padding: 10px 25px; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; transition: background 0.3s ease; }
+  .image-overlay a:hover { background: var(--gold); }
+
+  .card-info { padding: 30px; text-align: center; border-top: 3px solid var(--gold); }
+  .card-info h3 { color: var(--dark-green); font-size: 1.4rem; font-family: 'Playfair Display', serif; margin-bottom: 5px; }
+  .member-title { display: block; color: var(--gold); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; margin-bottom: 15px; }
+  .card-info p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; }
+
+  @media (max-width: 768px) {
+    .team-grid { gap: 30px; }
+  }
 </style>
