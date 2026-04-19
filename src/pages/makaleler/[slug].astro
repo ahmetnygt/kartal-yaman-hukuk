@@ -16,6 +16,9 @@ const { Content } = await render(makale); // Yeni render fonksiyonu
 
 <Layout title={makale.data.title}>
   <article class="single-article">
+    <div class="back-link-wrapper">
+      <a href="/makaleler" class="back-link">&larr; Tüm Makalelere Dön</a>
+    </div>
     <header class="article-header">
       <h1>{makale.data.title}</h1>
       <div class="meta">
@@ -39,4 +42,7 @@ const { Content } = await render(makale); // Yeni render fonksiyonu
   .article-header h1 { font-size: 2.5rem; margin-bottom: 10px; font-family: 'Playfair Display', serif; color: var(--dark-green); }
   .content-body :global(h2) { color: var(--dark-green); margin-top: 40px; margin-bottom: 20px; font-family: 'Playfair Display', serif; }
   .content-body :global(h3) { color: var(--dark-green); margin-top: 30px; margin-bottom: 15px; font-family: 'Playfair Display', serif; }
+  .back-link-wrapper { margin-bottom: 30px; }
+  .back-link { color: var(--gold); font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+  .back-link:hover { color: var(--dark-green); }
 </style>

@@ -1,0 +1,49 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Sayfa Bulunamadı">
+  <section class="error-page">
+    <div class="container text-center">
+      <h1 class="error-code">404</h1>
+      <h2 class="error-title">Aradığınız Adalet Burada Değil</h2>
+      <p class="error-desc">Görünüşe göre ulaşmaya çalıştığınız sayfa kaldırılmış, adı değişmiş veya geçici olarak hizmet dışı kalmış olabilir. Hukuki sürecinize ana sayfamızdan devam edebilirsiniz.</p>
+      <a href="/" class="btn-gold large">Ana Sayfaya Dön</a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .error-page {
+    min-height: calc(100vh - 200px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-cream);
+    padding: 100px 0;
+  }
+  .text-center {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .error-code {
+    font-family: 'Playfair Display', serif;
+    font-size: 8rem;
+    color: var(--dark-green);
+    line-height: 1;
+    margin-bottom: 20px;
+  }
+  .error-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: var(--text-main);
+    margin-bottom: 20px;
+  }
+  .error-desc {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 40px;
+  }
+</style>
