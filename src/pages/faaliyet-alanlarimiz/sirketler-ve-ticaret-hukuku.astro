@@ -1,0 +1,147 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Şirketler ve Ticaret Hukuku | Kartal Yaman Hukuk">
+  
+  <section class="page-header">
+    <div class="container">
+      <h1>Şirketler ve Ticaret Hukuku</h1>
+      <p>Ticari işletmelerin ve şirketlerin kuruluşundan tasfiyesine kadar tüm hukuki süreçlerinde güncel mevzuat ışığında danışmanlık hizmeti sunulmaktadır.</p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="container article-container">
+      <div class="article-content">
+        <h2>Ticari Hayatta Hukuki Güvenlik</h2>
+        <p>Ticaret hayatının dinamik ve değişken yapısı, şirketlerin kuruluş, işleyiş ve sona erme aşamalarında karmaşık hukuki süreçlerle karşılaşmasına neden olmaktadır. Kartal Yaman Hukuk Bürosu olarak, müvekkillerimizin ticari faaliyetlerini hukuki güvenlik içinde sürdürebilmeleri için önleyici hukuk hizmetleri ve uyuşmazlık çözümleri sunmaktayız.</p>
+        
+        <p>Amacımız, ticari riskleri minimize ederek şirketlerin asıl faaliyet alanlarına odaklanmalarını sağlamak ve olası ihtilaflarda kanunlar çerçevesinde en etkin temsili gerçekleştirmektir.</p>
+        
+        <h3>Bu Alanda Verdiğimiz Başlıca Hizmetler:</h3>
+        <ul class="custom-list">
+          <li>Yerli ve yabancı sermayeli şirketlerin kuruluşu, ana sözleşmelerinin tanzimi.</li>
+          <li>Genel Kurul ve Yönetim Kurulu toplantılarının hukuki prosedürlere uygun yürütülmesi.</li>
+          <li>Hisse devri, şirket birleşme, bölünme ve tür değiştirme (M&A) işlemleri.</li>
+          <li>Ticari sözleşmelerin hazırlanması, incelenmesi ve risk analizlerinin yapılması.</li>
+          <li>Konkordato, iflas erteleme ve yeniden yapılandırma süreçlerinin yönetimi.</li>
+          <li>Haksız rekabet davaları ve ticari uyuşmazlıkların tahkim veya mahkemeler yoluyla çözümü.</li>
+          <li>Şirketlerin günlük işleyişinde ihtiyaç duyduğu sürekli hukuki danışmanlık (Retainer) hizmetleri.</li>
+        </ul>
+
+        <div class="contact-box">
+          <h4>Hukuki Değerlendirme ve Danışmanlık</h4>
+          <p>Şirketler ve ticaret hukuku kapsamındaki süreçleriniz, sözleşme denetimleriniz veya mevcut ticari uyuşmazlıklarınız için büromuzla iletişime geçebilirsiniz.</p>
+          <a href="/iletisim" class="btn-gold">İletişime Geçin</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  /* SAYFA ÜST BAŞLIĞI */
+  .page-header { 
+    background-color: var(--dark-green); 
+    color: var(--white); 
+    padding: 80px 0; 
+    text-align: center; 
+  }
+  .page-header h1 { 
+    font-family: 'Playfair Display', serif; 
+    font-size: 2.8rem; 
+    margin-bottom: 15px; 
+    color: var(--white); 
+  }
+  .page-header p { 
+    color: #A0B0AA; 
+    max-width: 700px; 
+    margin: 0 auto; 
+    line-height: 1.8; 
+    font-size: 1.1rem; 
+  }
+  
+  /* İÇERİK ALANI */
+  .content-section { 
+    padding: 80px 0; 
+    background-color: var(--bg-cream); 
+  }
+  .article-container { 
+    max-width: 850px; 
+    margin: 0 auto; 
+    background: var(--white); 
+    padding: 60px; 
+    border-radius: 4px; 
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03); 
+  }
+  
+  .article-content h2 { 
+    font-size: 1.8rem; 
+    color: var(--dark-green); 
+    margin-bottom: 20px; 
+    font-family: 'Playfair Display', serif; 
+  }
+  .article-content h3 { 
+    font-size: 1.3rem; 
+    color: var(--dark-green); 
+    margin: 40px 0 20px; 
+    font-family: 'Playfair Display', serif; 
+  }
+  .article-content p { 
+    color: var(--text-muted); 
+    line-height: 1.8; 
+    margin-bottom: 20px; 
+    font-size: 1.05rem; 
+  }
+  
+  /* Jilet Gibi Liste Tasarımı */
+  .custom-list { 
+    list-style: none; 
+    margin-bottom: 40px; 
+  }
+  .custom-list li { 
+    position: relative; 
+    padding-left: 28px; 
+    margin-bottom: 15px; 
+    color: var(--text-muted); 
+    line-height: 1.7; 
+    font-size: 1.05rem;
+  }
+  .custom-list li::before { 
+    content: '■'; 
+    position: absolute; 
+    left: 0; 
+    color: var(--gold); 
+    font-size: 0.8rem; 
+    top: 3px; 
+  }
+
+  /* Alt Kutu (Bize Ulaşın Alanı) */
+  .contact-box { 
+    background-color: #F8F9FA; 
+    border-left: 4px solid var(--gold); 
+    padding: 35px; 
+    margin-top: 50px; 
+  }
+  .contact-box h4 { 
+    color: var(--dark-green); 
+    margin-bottom: 12px; 
+    font-size: 1.2rem; 
+  }
+  .contact-box p { 
+    margin-bottom: 25px; 
+    font-size: 0.95rem; 
+    color: var(--text-muted);
+  }
+
+  /* MOBİL AYARLAR */
+  @media (max-width: 768px) {
+    .page-header { padding: 60px 0; }
+    .page-header h1 { font-size: 2.2rem; }
+    .article-container { padding: 30px 20px; }
+    .article-content h2 { font-size: 1.5rem; }
+    .contact-box { padding: 25px; }
+  }
+</style>

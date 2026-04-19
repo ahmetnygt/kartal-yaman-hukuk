@@ -1,0 +1,141 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="İletişim">
+  
+  <section class="page-header">
+    <div class="container">
+      <h1>Bize Ulaşın</h1>
+      <p>Hukuki danışmanlık talepleriniz veya sorularınız için bizimle iletişime geçebilirsiniz. Uzman kadromuz en kısa sürede size dönüş yapacaktır.</p>
+    </div>
+  </section>
+
+  <section class="contact-page-content">
+    <div class="container">
+      <div class="contact-main-grid">
+        
+        <div class="contact-info-column">
+          <div class="info-card">
+            <span class="info-label">ADRESİMİZ</span>
+            <h3>Kartal Yaman Hukuk Plaza</h3>
+            <p>Hukuk Mahallesi, Adalet Sokak, No: 12, Kat: 5<br />Şişli / İSTANBUL</p>
+          </div>
+
+          <div class="info-card">
+            <span class="info-label">BİZE ULAŞIN</span>
+            <div class="contact-links">
+              <a href="tel:+902125555555"><strong>T:</strong> 0212 555 55 55</a>
+              <a href="tel:+905555555555"><strong>M:</strong> 0555 555 55 55</a>
+              <a href="mailto:info@kartalyamanhukuk.com"><strong>E:</strong> info@kartalyamanhukuk.com</a>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <span class="info-label">ÇALIŞMA SAATLERİ</span>
+            <p>Pazartesi - Cuma: 09:00 - 18:00<br />Cumartesi: 10:00 - 14:00</p>
+          </div>
+        </div>
+
+        <div class="contact-form-column">
+          <div class="form-wrapper">
+            <h2>Hukuki Danışmanlık Formu</h2>
+            <p>Lütfen mesajınızı ve iletişim bilgilerinizi eksiksiz doldurunuz.</p>
+            
+            <form action="#" class="custom-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label>ADINIZ SOYADINIZ</label>
+                  <input type="text" placeholder="Örn: Ahmet Yılmaz" required />
+                </div>
+                <div class="form-group">
+                  <label>E-POSTA ADRESİNİZ</label>
+                  <input type="email" placeholder="orn@email.com" required />
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label>KONU</label>
+                <input type="text" placeholder="Hangi alanda destek istiyorsunuz?" />
+              </div>
+
+              <div class="form-group">
+                <label>MESAJINIZ</label>
+                <textarea rows="5" placeholder="Kısaca durumunuzu anlatınız..."></textarea>
+              </div>
+
+              <button type="submit" class="btn-gold full-btn">MESAJI GÖNDER</button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="map-section">
+    <div class="container full-map">
+      <div class="map-placeholder">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d192698.2721864197!2d28.8473733076136!3d41.00523670691136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caa7040068086b%3A0xe1cc1e01f361c321!2zxLBzdGFuYnVs!5e0!3m2!1str!2str!4v1713531234567!5m2!1str!2str" 
+          width="100%" 
+          height="450" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  /* SAYFA ÜSTÜ */
+  .page-header {
+    background-color: var(--dark-green);
+    color: var(--white);
+    padding: 80px 0;
+    text-align: center;
+  }
+  .page-header h1 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 15px; color: var(--white); }
+  .page-header p { color: #A0B0AA; max-width: 650px; margin: 0 auto; line-height: 1.8; }
+
+  /* ANA İÇERİK */
+  .contact-page-content { padding: 50px; background-color: var(--bg-cream); }
+  .contact-main-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 80px; align-items: start; }
+
+  /* SOL KOLON BİLGİLER */
+  .contact-info-column { display: flex; flex-direction: column; gap: 40px; }
+  .info-card { border-left: 3px solid var(--gold); padding-left: 25px; }
+  .info-label { display: block; font-size: 0.75rem; color: var(--gold); font-weight: 600; letter-spacing: 2px; margin-bottom: 10px; }
+  .info-card h3 { font-size: 1.5rem; color: var(--dark-green); margin-bottom: 10px; font-family: 'Playfair Display', serif; }
+  .info-card p, .contact-links a { color: var(--text-muted); line-height: 1.7; font-size: 1rem; text-decoration: none; display: block; }
+  .contact-links a:hover { color: var(--gold); }
+  .contact-links strong { color: var(--dark-green); }
+
+  /* SAĞ KOLON FORM */
+  .form-wrapper { background: var(--white); padding: 50px; border-radius: 4px; box-shadow: 0 10px 40px rgba(0,0,0,0.05); }
+  .form-wrapper h2 { font-family: 'Playfair Display', serif; color: var(--dark-green); font-size: 2rem; margin-bottom: 10px; }
+  .form-wrapper p { color: var(--text-muted); margin-bottom: 40px; }
+
+  .custom-form .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .form-group { margin-bottom: 25px; }
+  .form-group label { display: block; font-size: 0.8rem; font-weight: 600; color: var(--dark-green); margin-bottom: 10px; letter-spacing: 0.5px; }
+  .form-group input, .form-group textarea {
+    width: 100%; padding: 15px; border: 1px solid #E2E8F0; border-radius: 4px; background: #F9FAFB; font-family: 'Inter', sans-serif;
+  }
+  .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--gold); background: var(--white); }
+  .full-btn { width: 100%; padding: 18px; font-weight: 600; }
+
+  /* HARİTA */
+  .map-section { padding-bottom: 100px; background-color: var(--bg-cream); }
+  .full-map { border-radius: 4px; overflow: hidden; box-shadow: 0 5px 30px rgba(0,0,0,0.1); }
+
+  /* MOBİL AYARLAR */
+  @media (max-width: 992px) {
+    .contact-main-grid { grid-template-columns: 1fr; gap: 60px; }
+    .form-wrapper { padding: 30px; }
+    .custom-form .form-row { grid-template-columns: 1fr; }
+  }
+</style>
