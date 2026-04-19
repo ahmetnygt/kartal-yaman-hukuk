@@ -29,153 +29,159 @@ const calismaAlanlari = [
   {
     title: "İcra ve İflas Hukuku",
     description: "Alacağın tahsili veya haksız icra takiplerine karşı durma konusunda hızlı ve etkili haciz/kaldırma işlemleri."
+  },
+  {
+    title: "Fikrî Mülkiyet Hukuku",
+    description: "Marka, patent, endüstriyel tasarım tescilleri ve her türlü fikri mülkiyet haklarının ihlallerine karşı korunması."
   }
 ];
 ---
 
-<Layout title="Çalışma Alanlarımız | Kartal Yaman Hukuk">
-  <main class="alanlar-sayfasi">
-    <div class="konteyner">
-      
-      <div class="baslik-alani">
-        <h1>Çalışma Alanlarımız</h1>
-        <div class="kirmizi-cizgi"></div>
-        <p>Müvekkillerimizin hakkını, kendi hakkımız gibi savunur; her türlü hukuki süreçte şeffaf, samimi ve sonuç odaklı hizmet veririz.</p>
-      </div>
+<Layout title="Faaliyet Alanlarımız">
+  
+  <section class="page-header">
+    <div class="container">
+      <h1>Faaliyet Alanlarımız</h1>
+      <p>Müvekkillerimizin hakkını, kendi hakkımız gibi savunur; her türlü hukuki süreçte şeffaf, samimi ve sonuç odaklı hizmet veririz.</p>
+    </div>
+  </section>
 
-      <div class="grid-yapisi">
+  <section class="services-page">
+    <div class="container">
+      <div class="services-grid">
         {calismaAlanlari.map((alan) => (
-          <div class="kart">
-            <div class="kart-icerik">
-              <div class="ikon-kutu">
-                <span>⚖️</span>
-              </div>
-              <h3>{alan.title}</h3>
-              <p>{alan.description}</p>
+          <div class="service-card">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"></path>
+              </svg>
             </div>
-            <div class="kart-alt">
-              <a href="#">Detaylı İncele ➔</a>
-            </div>
+            <h3>{alan.title}</h3>
+            <p>{alan.description}</p>
+            <a href="#" class="read-more">DETAYLI BİLGİ &rarr;</a>
           </div>
         ))}
       </div>
-
     </div>
-  </main>
+  </section>
+
 </Layout>
 
 <style>
-  /* Saf, Katıksız ve Jilet Gibi CSS */
-  .alanlar-sayfasi {
-    background-color: #f9fafb;
-    padding: 60px 0;
-    min-height: 100vh;
-    font-family: 'Arial', sans-serif;
+  /* SAYFA ÜST BAŞLIĞI (HERO MİNİ) */
+  .page-header {
+    background-color: var(--dark-green);
+    color: var(--white);
+    padding: 80px 0;
+    text-align: center;
   }
 
-  .konteyner {
-    max-width: 1200px;
+  .page-header h1 {
+    color: var(--white);
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+  }
+
+  .page-header p {
+    color: #A0B0AA;
+    max-width: 650px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+  }
+
+  /* KARTLAR VE GRID (Ana sayfadaki ile aynı jilet yapı) */
+  .services-page {
+    padding: 80px 0 100px;
+    background-color: var(--bg-cream);
+  }
+
+  .container {
+    max-width: 1140px;
     margin: 0 auto;
     padding: 0 20px;
   }
 
-  .baslik-alani {
-    text-align: center;
-    margin-bottom: 50px;
-  }
-
-  .baslik-alani h1 {
-    font-size: 2.5rem;
-    color: #111827;
-    margin-bottom: 15px;
-    font-weight: bold;
-  }
-
-  .kirmizi-cizgi {
-    width: 80px;
-    height: 4px;
-    background-color: #b91c1c; /* Ağır ve tok bir kan kırmızısı */
-    margin: 0 auto 20px auto;
-  }
-
-  .baslik-alani p {
-    font-size: 1.1rem;
-    color: #4b5563;
-    max-width: 700px;
-    margin: 0 auto;
-    line-height: 1.6;
-  }
-
-  .grid-yapisi {
+  .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
   }
 
-  .kart {
-    background-color: #ffffff;
-    border: 1px solid #e5e7eb;
-    border-radius: 8px;
+  .service-card {
+    background: var(--white);
+    padding: 40px 35px;
+    border-radius: 4px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden;
   }
 
-  .kart:hover {
+  .service-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
   }
 
-  .kart-icerik {
-    padding: 30px;
-    flex-grow: 1;
-  }
-
-  .ikon-kutu {
-    width: 50px;
-    height: 50px;
-    background-color: #fef2f2;
-    color: #b91c1c;
-    border-radius: 8px;
+  .card-icon {
+    width: 55px;
+    height: 55px;
+    color: var(--gold);
+    margin-bottom: 25px;
+    background: rgba(180, 141, 82, 0.1);
+    padding: 13px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5rem;
-    margin-bottom: 20px;
   }
 
-  .kart-icerik h3 {
-    font-size: 1.25rem;
-    color: #111827;
+  .card-icon svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .service-card h3 {
+    font-size: 1.3rem;
     margin-bottom: 15px;
-    font-weight: bold;
+    color: var(--dark-green);
+    font-family: 'Playfair Display', serif;
   }
 
-  .kart-icerik p {
-    color: #4b5563;
+  .service-card p {
+    color: var(--text-muted);
+    margin-bottom: 30px;
     font-size: 0.95rem;
-    line-height: 1.6;
+    line-height: 1.7;
+    flex-grow: 1; /* Altındaki butonu en aşağı itmek için */
   }
 
-  .kart-alt {
-    background-color: #f9fafb;
-    padding: 15px 30px;
-    border-top: 1px solid #e5e7eb;
+  .read-more {
+    color: var(--gold);
+    font-weight: 600;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    display: inline-flex;
+    align-items: center;
     margin-top: auto;
   }
 
-  .kart-alt a {
-    color: #b91c1c;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 0.9rem;
-    display: flex;
-    align-items: center;
-    transition: color 0.2s ease;
+  .read-more:hover {
+    color: var(--gold-hover);
   }
 
-  .kart-alt a:hover {
-    color: #7f1d1d;
+  /* MOBİL AYARLAR */
+  @media (max-width: 768px) {
+    .page-header {
+      padding: 60px 0;
+    }
+    .page-header h1 {
+      font-size: 2.3rem;
+    }
+    .service-card {
+      padding: 30px 25px;
+    }
   }
 </style>
