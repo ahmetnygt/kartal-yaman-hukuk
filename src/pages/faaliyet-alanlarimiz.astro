@@ -2,37 +2,77 @@
 import Layout from '../layouts/Layout.astro';
 
 const calismaAlanlari = [
+  /* YENİ NESİL TEKNOLOJİ ALANLARI (ÜSTTE) */
   {
-    title: "Şirketler ve Ticaret Hukuku",
-    description: "Şirket kurulumundan başlayıp, günlük ticari işlerde, hisse devrinde ve sözleşmelerde esnafın ve şirketin her türlü hukuki derdini çözeriz."
+    title: "Yapay Zeka (AI) Hukuku",
+    description: "Yapay zeka sistemlerinin hukuki statüsü, algoritma sorumluluğu ve AI tabanlı buluşların korunması süreçlerinde öncü danışmanlık.",
+    slug: "yapay-zeka-hukuku"
   },
   {
-    title: "Sözleşmeler Hukuku",
-    description: "Mal alım satımından ortaklık sözleşmelerine kadar, sonradan baş ağrıtmayacak, sağlam ve net sözleşmeler hazırlarız."
+    title: "Kripto Varlıklar ve Blokzincir",
+    description: "Kripto para borsaları, akıllı sözleşmeler (Smart Contracts) ve dijital varlıkların regülasyon uyum süreçlerinde teknik ve hukuki destek.",
+    slug: "kripto-varlik-hukuku"
+  },
+  {
+    title: "Bilişim ve Teknoloji Hukuku",
+    description: "Yazılım lisanslama, bulut bilişim ve dijital dönüşüm süreçlerinde; kodun mantığını bilen, teknoloji odaklı hukuk çözümleri.",
+    slug: "bilisim-hukuku"
+  },
+  {
+    title: "Metaverse ve NFT Hukuku",
+    description: "Sanal dünyalardaki mülkiyet hakları, NFT tescilleri ve dijital sanat eserlerinin telif haklarının korunması.",
+    slug: "metaverse-nft-hukuku"
+  },
+  {
+    title: "Robot Hukuku",
+    description: "Otonom sistemlerin sebep olduğu zararlar ve robotik teknolojilerdeki sorumluluk rejimleri üzerine geleceğin hukuk danışmanlığı.",
+    slug: "robot-hukuku"
+  },
+  {
+    title: "Kişisel Verilerin Korunması (KVKK)",
+    description: "Veri işleme süreçlerinin analizi, KVKK uyum projeleri ve uluslararası veri aktarımı mekanizmalarının tesisi.",
+    slug: "kvkk-danismanligi"
+  },
+  /* GELENEKSEL HUKUK ALANLARI (DEVAMI) */
+  {
+    title: "Ceza ve İnfaz Hukuku",
+    description: "Soruşturma ve kovuşturma aşamalarında, müvekkillerimizin haklarını büyük bir gizlilik ve titizlikle savunan etkin temsil.",
+    slug: "ceza-hukuku"
+  },
+  {
+    title: "Şirketler ve Ticaret Hukuku",
+    description: "Şirket kuruluşları, birleşme ve devralmalar (M&A) ile ticari sözleşmelerin risk analizleri ve yönetimi.",
+    slug: "sirketler-hukuku"
   },
   {
     title: "İş ve Sosyal Güvenlik Hukuku",
-    description: "İşçi-işveren uyuşmazlıkları, iş kazaları ve arabuluculuk süreçlerinde her iki tarafın da hakkını koruyan net çözümler."
-  },
-  {
-    title: "Ceza ve İnfaz Hukuku",
-    description: "Soruşturma ve kovuşturma aşamalarında, müvekkilin hakkını sonuna kadar, büyük bir gizlilik ve titizlikle savunuruz."
+    description: "İşçi-işveren uyuşmazlıkları, iş kazaları ve arabuluculuk süreçlerinde her iki tarafın da hakkını koruyan net çözümler.",
+    slug: "is-hukuku"
   },
   {
     title: "Gayrimenkul Hukuku",
-    description: "Tapu iptal, tescil, tahliye ve kira uyuşmazlıklarında; mülk sahibinin veya kiracının hakkını masada bırakmayız."
+    description: "Tapu iptal, tescil, tahliye ve kira uyuşmazlıklarında; mülk sahibinin veya kiracının hakkını masada bırakmayan yönetim.",
+    slug: "gayrimenkul-hukuku"
   },
   {
     title: "Aile ve Miras Hukuku",
-    description: "Boşanma, nafaka, velayet ve miras paylaşımı gibi hassas konularda, ailenin mahremiyetini koruyarak en hızlı sonucu alırız."
+    description: "Boşanma, velayet ve miras paylaşımı gibi hassas konularda, mahremiyeti koruyarak en hızlı sonucu alma odaklı yaklaşım.",
+    slug: "aile-hukuku"
+  },
+  {
+    title: "Sözleşmeler Hukuku",
+    description: "Ticari ve şahsi her türlü sözleşmenin; ileride uyuşmazlık yaratmayacak şekilde, sağlam ve net bir dille hazırlanması.",
+    slug: "sozlesmeler-hukuku"
   },
   {
     title: "İcra ve İflas Hukuku",
-    description: "Alacağın tahsili veya haksız icra takiplerine karşı durma konusunda hızlı ve etkili haciz/kaldırma işlemleri."
+    description: "Alacak tahsili ve haksız icra takiplerine karşı durma süreçlerinde hızlı ve etkili hukuk operasyonları.",
+    slug: "icra-iflas-hukuku"
   },
   {
     title: "Fikrî Mülkiyet Hukuku",
-    description: "Marka, patent, endüstriyel tasarım tescilleri ve her türlü fikri mülkiyet haklarının ihlallerine karşı korunması."
+    description: "Marka, patent ve endüstriyel tasarım tescilleri ile her türlü fikri mülkiyet hakkının ihlallerine karşı savunma.",
+    slug: "fikri-mulkiyet-hukuku"
   }
 ];
 ---
@@ -42,7 +82,7 @@ const calismaAlanlari = [
   <section class="page-header">
     <div class="container">
       <h1>Faaliyet Alanlarımız</h1>
-      <p>Müvekkillerimizin hakkını, kendi hakkımız gibi savunur; her türlü hukuki süreçte şeffaf, samimi ve sonuç odaklı hizmet veririz.</p>
+      <p>Klasik hukuk disiplinlerini geleceğin teknolojileriyle harmanlayan, tam kapsamlı hukuk ve danışmanlık hizmetleri.</p>
     </div>
   </section>
 
@@ -53,12 +93,12 @@ const calismaAlanlari = [
           <div class="service-card">
             <div class="card-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"></path>
+                 <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
               </svg>
             </div>
             <h3>{alan.title}</h3>
             <p>{alan.description}</p>
-            <a href="sirketler-ve-ticaret-hukuku" class="read-more">DETAYLI BİLGİ &rarr;</a>
+            <a href={`/faaliyet-alanlarimiz/${alan.slug}`} class="read-more">DETAYLI BİLGİ &rarr;</a>
           </div>
         ))}
       </div>
@@ -68,120 +108,80 @@ const calismaAlanlari = [
 </Layout>
 
 <style>
-  /* SAYFA ÜST BAŞLIĞI (HERO MİNİ) */
-  .page-header {
-    background-color: var(--dark-green);
-    color: var(--white);
-    padding: 50px 15px;
-    text-align: center;
-  }
+  .page-header { background-color: var(--brand-red); color: var(--white); padding: 70px 15px; text-align: center; }
+  .page-header h1 { color: var(--white); font-size: 2.8rem; margin-bottom: 20px; font-family: 'Playfair Display', serif; }
+  .page-header p { color: #E5D5C5; max-width: 650px; margin: 0 auto; font-size: 1.15rem; line-height: 1.8; }
 
-  .page-header h1 {
-    color: var(--white);
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    font-family: 'Playfair Display', serif;
-  }
-
-  .page-header p {
-    color: #A0B0AA;
-    max-width: 650px;
-    margin: 0 auto;
-    font-size: 1.1rem;
-    line-height: 1.8;
-  }
-
-  /* KARTLAR VE GRID (Ana sayfadaki ile aynı jilet yapı) */
-  .services-page {
-    padding: 80px 0 100px;
-    background-color: var(--bg-cream);
-  }
-
-  .container {
-    max-width: 1140px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
+  .services-page { padding: 80px 0; background-color: var(--bg-cream); }
+  
+  /* Kartların devleşmesini engellemek için 360px tavanı koyduk ve gridi ortaladık */
+  .services-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(300px, 360px)); 
+    gap: 30px; 
+    justify-content: center; 
   }
 
   .service-card {
     background: var(--white);
-    padding: 40px 35px;
-    border-radius: 4px;
+    padding: 40px 30px;
+    border-radius: 8px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
+    border-bottom: 3px solid transparent;
   }
 
   .service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    border-bottom: 3px solid var(--gold);
   }
 
   .card-icon {
     width: 55px;
     height: 55px;
     color: var(--gold);
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     background: rgba(180, 141, 82, 0.1);
-    padding: 13px;
-    border-radius: 50%;
+    padding: 12px;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
-  .card-icon svg {
-    width: 100%;
-    height: 100%;
+  .service-card h3 { 
+    font-size: 1.3rem; 
+    margin-bottom: 15px; 
+    color: var(--brand-red); 
+    font-family: 'Playfair Display', serif; 
+    min-height: 3.2rem; 
+    display: flex; 
+    align-items: center; 
+  }
+  
+  .service-card p { 
+    color: var(--text-muted); 
+    margin-bottom: 25px; 
+    font-size: 0.95rem; 
+    line-height: 1.7; 
+    flex-grow: 1; 
   }
 
-  .service-card h3 {
-    font-size: 1.3rem;
-    margin-bottom: 15px;
-    color: var(--dark-green);
-    font-family: 'Playfair Display', serif;
+  .read-more { 
+    color: var(--gold); 
+    font-weight: 700; 
+    font-size: 0.75rem; 
+    text-transform: uppercase; 
+    letter-spacing: 1.2px; 
+    margin-top: auto; 
   }
 
-  .service-card p {
-    color: var(--text-muted);
-    margin-bottom: 30px;
-    font-size: 0.95rem;
-    line-height: 1.7;
-    flex-grow: 1; /* Altındaki butonu en aşağı itmek için */
-  }
-
-  .read-more {
-    color: var(--gold);
-    font-weight: 600;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    display: inline-flex;
-    align-items: center;
-    margin-top: auto;
-  }
-
-  .read-more:hover {
-    color: var(--gold-hover);
-  }
-
-  /* MOBİL AYARLAR */
   @media (max-width: 768px) {
-    .page-header {
-      padding: 60px 0;
-    }
-    .page-header h1 {
-      font-size: 2.3rem;
-    }
-    .service-card {
-      padding: 30px 25px;
-    }
+    .services-grid { grid-template-columns: 1fr; }
+    .page-header h1 { font-size: 2.3rem; }
+    .service-card { padding: 30px 25px; }
   }
 </style>

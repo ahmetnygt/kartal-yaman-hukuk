@@ -3,23 +3,25 @@ import Layout from '../layouts/Layout.astro';
 
 const teamMembers = [
   {
-    name: "Av. Kartal Yaman",
-    title: "Kurucu Ortak",
-    desc: "Ceza Hukuku ve Şirketler Hukuku alanında 15 yılı aşkın tecrübesiyle büromuzun kurucusudur.",
-    image: "/images/teammember.jpg"
+    name: "Av. Emel Kartal Yaman",
+    title: "Kurucu & Yönetici Avukat",
+    desc: "Bilişim Hukuku, Yapay Zeka ve Kripto Varlıklar alanında derin mühendislik ve hukuk tecrübesiyle büromuzun kurucusudur.",
+    image: "/images/teammember.jpg",
+    cardImage: "/images/kartvizit_emel_kartal_yaman.jpg",
+    phone: "+905325209187",
+    email: "info@emelkartal.com.tr",
+    linkedin: "https://linkedin.com/in/emel-kartal-30a2301b"
   },
   {
-    name: "Av. Zeynep Demir",
-    title: "Kıdemli Avukat",
-    desc: "Aile ve Miras Hukuku uyuşmazlıklarında uzmanlaşmış, arabuluculuk siciline kayıtlı avukatımızdır.",
-    image: "/images/teammember.jpg"
-  },
-  {
-    name: "Av. Burak Yılmaz",
+    name: "Av. Erkin Doğaç Karakuş",
     title: "Avukat",
-    desc: "İş Hukuku ve İcra-İflas hukuku alanında müvekkillerimize dinamik ve hızlı çözümler sunmaktadır.",
-    image: "/images/teammember.jpg"
-  }
+    desc: "Şirketler Hukuku ve Ticari Sözleşmeler alanında uzmanlaşmış, arabuluculuk siciline kayıtlı avukatımızdır.",
+    image: "/images/teammember.jpg",
+    cardImage: "/images/kartvizit_erkin_dogac_karakus.jpg",
+    phone: "+905555555555",
+    email: "erkin@emelkartal.com.tr",
+    linkedin: "#"
+  },
 ];
 ---
 
@@ -37,9 +39,16 @@ const teamMembers = [
         {teamMembers.map((member) => (
           <div class="team-card">
             <div class="card-image">
-              <img src={member.image} alt={member.name} />
-              <div class="image-overlay">
-                <a href="mailto:info@kartalyamanhukuk.com">İletişime Geç</a>
+              <img src={member.image} alt={member.name} class="profile-photo" />
+              
+              <div class="business-card-overlay">
+                <div class="card-actions">
+                    <a href={`tel:${member.phone}`} title="Ara"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l2.27-2.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a>
+                    <a href={`mailto:${member.email}`} title="E-posta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+                    <a href={member.linkedin} target="_blank" title="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+                </div>
+
+                <img src={member.cardImage} alt={`${member.name} Kartvizit`} class="b-card-img" />
               </div>
             </div>
             <div class="card-info">
@@ -55,31 +64,88 @@ const teamMembers = [
 </Layout>
 
 <style>
-  .page-header { background-color: var(--dark-green); color: var(--white); padding: 50px 15px; text-align: center; }
-  .page-header h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 15px; color: var(--white); }
-  .page-header p { color: #A0B0AA; max-width: 650px; margin: 0 auto; line-height: 1.8; font-size: 1.1rem; }
+  .page-header { background-color: var(--brand-red); color: var(--white); padding: 70px 15px; text-align: center; }
+  .page-header h1 { font-family: 'Playfair Display', serif; font-size: 2.8rem; margin-bottom: 15px; color: var(--white); }
+  .page-header p { color: #E5D5C5; max-width: 650px; margin: 0 auto; line-height: 1.8; font-size: 1.15rem; }
 
-  .team-section { padding: 50px; background-color: var(--bg-cream); }
-  .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+  .team-section { padding: 80px 0; background-color: var(--bg-cream); }
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 350px)); 
+    gap: 40px;
+    justify-content: center;
+}
 
-  .team-card { background: var(--white); border-radius: 4px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.03); transition: transform 0.3s ease; }
+.team-card {
+    max-width: 350px;
+    width: 100%;
+    background: var(--white); border-radius: 8px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: transform 0.3s ease; }
   .team-card:hover { transform: translateY(-5px); }
 
-  .card-image { position: relative; overflow: hidden; aspect-ratio: 3/4; }
-  .card-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
-  .team-card:hover .card-image img { transform: scale(1.05); }
+  .card-image { position: relative; overflow: hidden; aspect-ratio: 3/4; background-color: var(--brand-footer-dark); }
   
-  .image-overlay { position: absolute; inset: 0; background: rgba(20, 36, 31, 0.8); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease; }
-  .team-card:hover .image-overlay { opacity: 1; }
-  .image-overlay a { color: var(--white); border: 1px solid var(--gold); padding: 10px 25px; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; transition: background 0.3s ease; }
-  .image-overlay a:hover { background: var(--gold); }
+  .profile-photo { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
+  
+  .team-card:hover .profile-photo { transform: scale(1.05); filter: brightness(0.3); }
 
-  .card-info { padding: 30px; text-align: center; border-top: 3px solid var(--gold); }
-  .card-info h3 { color: var(--dark-green); font-size: 1.4rem; font-family: 'Playfair Display', serif; margin-bottom: 5px; }
-  .member-title { display: block; color: var(--gold); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; margin-bottom: 15px; }
-  .card-info p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; }
+  /* Kartvizit ve Buton Overlay */
+  .business-card-overlay { 
+    position: absolute; 
+    inset: 0;
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between; /* Butonlar üste, kartvizit alta */
+    align-items: center;
+    padding: 20px 0 0 0; /* Alta boşluk bırakmıyoruz ki kart yapışsın */
+    transform: translateY(100%); 
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 2;
+  }
+  
+  .team-card:hover .business-card-overlay { transform: translateY(0); }
+
+  /* Üst Butonlar */
+  .card-actions {
+      display: flex;
+      gap: 15px;
+      opacity: 0;
+      transform: translateY(-20px);
+      transition: all 0.4s ease 0.2s; /* Gecikmeli gelsin şık durur */
+  }
+  .team-card:hover .card-actions { opacity: 1; transform: translateY(0); }
+
+  .card-actions a {
+      width: 40px;
+      height: 40px;
+      background: var(--gold);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+  }
+  .card-actions a:hover { background: white; color: var(--brand-red); transform: scale(1.1); }
+  .card-actions svg { width: 20px; height: 20px; }
+
+  /* Alta Yapışık Kartvizit Görseli */
+  .b-card-img { 
+    width: 100%; 
+    height: auto; 
+    /* Alta tam yapışması için margin-bottom: 0 */
+    box-shadow: 0 -5px 25px rgba(0,0,0,0.3);
+    border-radius: 8px 8px 0 0; /* Sadece üst köşeler yuvarlak, alta tam otursun */
+  }
+
+  .card-info { padding: 35px 30px; text-align: center; border-top: 3px solid var(--gold); }
+  .card-info h3 { color: var(--brand-red); font-size: 1.5rem; font-family: 'Playfair Display', serif; margin-bottom: 5px; }
+  .member-title { display: block; color: var(--gold); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; margin-bottom: 20px; }
+  .card-info p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; }
 
   @media (max-width: 768px) {
+    .page-header { padding: 60px 0; }
+    .page-header h1 { font-size: 2.3rem; }
     .team-grid { gap: 30px; }
+    /* Mobilde direkt görünsün istersen hover'ı kaldırıp transform:none yapabilirsin */
   }
 </style>

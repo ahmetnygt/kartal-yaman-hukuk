@@ -1,5 +1,38 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const newsItems = [
+  {
+    title: "Dijital Çağın Hukukçu Gözü",
+    source: "Görünüm Gazetesi",
+    link: "https://www.gorunumgazetesi.com.tr/post/dijital-%C3%A7a%C4%9F%C4%B1n-hukuk%C3%A7u-g%C3%B6z%C3%BC"
+  },
+  {
+    title: "Genç Avukat Emel Kartal Yaman Hukuk Bürosunun Açılışı Yapıldı",
+    source: "Manşet Haber Gazetesi",
+    link: "https://www.mansethabergazetesi.com/haber/genc-avukat-emel-kartal-yaman-hukuk-burosunun-acilisi-yapildi-5728"
+  },
+  {
+    title: "Avukat Emel Yaman Hukuk Bürosu Açıldı",
+    source: "Alternatif Gazetesi",
+    link: "https://www.alternatifgazetesi.com/avukat-emel-yaman-hukuk-burosu-acildi"
+  },
+  {
+    title: "Emel Kartal Yaman Hukuk Bürosu Açıldı",
+    source: "Görünüm Gazetesi",
+    link: "https://www.gorunumgazetesi.com.tr/post/emel-kartal-yaman-hukuk-b%C3%BCrosu-a%C3%A7%C4%B1ld%C4%B1"
+  },
+  {
+    title: "Avukat Emel Kartal Yaman Lüleburgaz'da Göreve Başlıyor",
+    source: "Alternatif Gazetesi",
+    link: "https://www.alternatifgazetesi.com/avukat-emel-kartal-yaman-luleburgazda-goreve-basliyor"
+  },
+  {
+    title: "Lüleburgaz’da Yeni Hukuk Bürosu Açıldı",
+    source: "Hürfikir Gazetesi",
+    link: "https://www.hurfikir.com.tr/2026/02/17/luleburgazda-yeni-hukuk-burosu-acildi/"
+  }
+];
 ---
 
 <Layout title="Ana Sayfa">
@@ -79,6 +112,27 @@ import Layout from '../layouts/Layout.astro';
 
 			<div style="text-align: center; margin-top: 60px;">
 				<a href="/faaliyet-alanlarimiz" class="btn-gold outline">Tüm Faaliyet Alanlarımız</a>
+			</div>
+		</div>
+	</section>
+
+	<section class="press-section">
+		<div class="container">
+			<div class="section-title centered">
+				<span>MEDYADA BİZ</span>
+				<h2>Basında Emel Kartal Yaman</h2>
+			</div>
+			
+			<div class="press-grid">
+				{newsItems.map((item) => (
+					<a href={item.link} target="_blank" class="press-card">
+						<div class="press-content">
+							<span class="press-source">{item.source}</span>
+							<h3>{item.title}</h3>
+							<span class="read-news">HABERİ OKU &rarr;</span>
+						</div>
+					</a>
+				))}
 			</div>
 		</div>
 	</section>
@@ -179,11 +233,11 @@ import Layout from '../layouts/Layout.astro';
 	.section-title { margin-bottom: 40px; }
 	.section-title.centered { text-align: center; margin-bottom: 60px; }
 	.section-title span { color: var(--gold); font-family: 'Inter', sans-serif; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2.5px; font-weight: 600; display: block; margin-bottom: 12px; }
-	.section-title h2 { font-size: 2.4rem; line-height: 1.2; color: var(--dark-green); font-family: 'Playfair Display', serif; }
+	.section-title h2 { font-size: 2.4rem; line-height: 1.2; color: var(--brand-red); font-family: 'Playfair Display', serif; }
 
 	/* HERO SECTION (TAM EKRAN SNAP - GÜNCELLENDİ) */
 	.hero {
-		background-color: var(--dark-green);
+		background-color: var(--brand-red);
 		color: var(--white);
 		/* height yerine min-height verdik, içerik uzunsa ezilip taşmasın diye */
 		min-height: calc(100vh - 125px); 
@@ -199,7 +253,7 @@ import Layout from '../layouts/Layout.astro';
 	.hero-label { color: var(--gold); font-family: 'Inter', sans-serif; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 3px; font-weight: 600; display: block; margin-bottom: 25px; }
 	.hero-text h1 { font-family: 'Playfair Display', serif; color: var(--white); font-size: 4.5rem; line-height: 1.05; margin-bottom: 30px; font-weight: 700; }
 	.hero-text h1 span { color: var(--gold); }
-	.hero-text p { color: #A0B0AA; font-size: 1.15rem; margin-bottom: 50px; max-width: 90%; line-height: 1.8; }
+	.hero-text p { color: var(--white); font-size: 1.15rem; margin-bottom: 50px; max-width: 90%; line-height: 1.8; }
 	.btn-gold.large { padding: 16px 40px; font-size: 1rem; border-radius: 4px; font-weight: 600; }
 	
 	.hero-image-container { display: flex; justify-content: flex-end; }
@@ -234,7 +288,7 @@ import Layout from '../layouts/Layout.astro';
 	.about-list li { display: flex; align-items: center; margin-bottom: 15px; color: var(--text-main); font-weight: 500; font-size: 0.95rem; }
 	
 	/* Godzilla İkonlarını Boyutlandıran Hayati Kodlar */
-	.check-icon { width: 18px; height: 18px; color: var(--dark-green); margin-right: 10px; flex-shrink: 0; }
+	.check-icon { width: 18px; height: 18px; color: var(--brand-red); margin-right: 10px; flex-shrink: 0; }
 	.btn-gold.outline { background-color: transparent; color: var(--gold); border: 1px solid var(--gold); }
 	.btn-gold.outline:hover { background-color: var(--gold); color: var(--white); }
 
@@ -255,7 +309,7 @@ import Layout from '../layouts/Layout.astro';
 	}
 	.card-icon svg { width: 26px; height: 26px; }
 
-	.service-card h3 { font-size: 1.3rem; margin-bottom: 20px; color: var(--dark-green); font-family: 'Playfair Display', serif;}
+	.service-card h3 { font-size: 1.3rem; margin-bottom: 20px; color: var(--brand-red); font-family: 'Playfair Display', serif;}
 	.service-card p { color: var(--text-muted); margin-bottom: 30px; font-size: 0.95rem; line-height: 1.7; }
 	.read-more { color: var(--gold); font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; display: inline-flex; align-items: center; }
 
@@ -279,4 +333,83 @@ import Layout from '../layouts/Layout.astro';
 		.img-tall { border-radius: 0 40px 0 40px; aspect-ratio: 4/3; }
 		.img-top-right, .img-bottom-right { display: none; } /* Mobilde yan resimleri gizle, kalabalık yapmasın */
 	}
+
+	.press-section {
+    padding: 50px 0;
+    background-color: var(--white);
+}
+
+.press-grid {
+    display: grid;
+    /* Sike sike 3 sütun olacak diyoruz */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.press-card {
+    background: var(--bg-cream);
+    padding: 30px;
+    border-radius: 4px;
+    border-left: 4px solid var(--gold);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-decoration: none;
+}
+
+.press-card:hover {
+    transform: translateY(-5px);
+    background-color: var(--brand-red);
+}
+
+.press-source {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.press-card h3 {
+    font-size: 1.15rem;
+    line-height: 1.4;
+    color: var(--brand-red);
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+}
+
+.read-news {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--gold);
+    letter-spacing: 0.5px;
+}
+
+/* Hover durumunda renk değişimleri */
+.press-card:hover .press-source,
+.press-card:hover h3,
+.press-card:hover .read-news {
+    color: var(--white);
+}
+
+.press-card:hover {
+    border-left-color: var(--white);
+}
+
+/* Tablet ve Mobilde patlamasın diye alt satırlara da ayar çekelim */
+@media (max-width: 992px) {
+    .press-grid {
+        grid-template-columns: repeat(2, 1fr); /* Tablette 2'li olsun */
+    }
+}
+
+@media (max-width: 768px) {
+    .press-grid {
+        grid-template-columns: 1fr; /* Mobilde alt alta tek sıra dilsin */
+    }
+}
 </style>

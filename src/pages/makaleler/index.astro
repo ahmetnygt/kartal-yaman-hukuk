@@ -32,9 +32,9 @@ const siraliMakaleler = butunMakaleler.sort((a, b) => b.data.date.valueOf() - a.
 </Layout>
 
 <style>
-  .page-header { background-color: var(--dark-green); color: var(--white); padding: 50px 15px; text-align: center; }
+  .page-header { background-color: var(--brand-red); color: var(--white); padding: 50px 15px; text-align: center; }
   .page-header h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 15px; color: var(--white); }
-  .page-header p { color: #A0B0AA; max-width: 650px; margin: 0 auto; line-height: 1.8; font-size: 1.1rem; }
+  .page-header p { color: var(--white); max-width: 650px; margin: 0 auto; line-height: 1.8; font-size: 1.1rem; }
 
   .article-grid {
     display: grid;
@@ -46,7 +46,7 @@ const siraliMakaleler = butunMakaleler.sort((a, b) => b.data.date.valueOf() - a.
   .article-card {
     background: var(--white);
     padding: 30px;
-    border-left: 4px solid var(--dark-green); /* Burayı yeşil yaptık */
+    border-left: 4px solid var(--brand-red); /* Burayı yeşil yaptık */
     box-shadow: 0 4px 20px rgba(0,0,0,0.03); /* Gölgeyi yumuşattık */
     transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
@@ -55,7 +55,7 @@ const siraliMakaleler = butunMakaleler.sort((a, b) => b.data.date.valueOf() - a.
     box-shadow: 0 10px 30px rgba(0,0,0,0.08);
   }
   .article-card h2 a {
-    color: var(--dark-green); /* Burayı da yeşil yaptık */
+    color: var(--brand-red); /* Burayı da yeşil yaptık */
     text-decoration: none;
     font-size: 1.25rem;
     font-family: 'Playfair Display', serif; /* Ağırlık kattık */

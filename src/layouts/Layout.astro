@@ -18,19 +18,19 @@ const currentPath = pathname.replace(/\/$/, ""); // Sondaki slash'i temizle
 		<meta charset="UTF-8" />
 		<meta name="description" content="Kartal Yaman Hukuk Bürosu - Profesyonel Hukuki Danışmanlık" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/ico+xml" href="/favicon.ico" />
 		<title>{title} | Kartal Yaman Hukuk Bürosu</title>
         <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 	</head>
 	<body>
+        <div id="page-loader">
+            <img src="/images/icon.png" alt="Yükleniyor..." class="loader-icon" />
+        </div>
         <div class="top-bar">
             <div class="container top-bar-container">
                 <div class="top-info">
-                    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l2.27-2.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> +90 555 555 55 55</span>
-                    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> info@kartalyamanhukuk.com</span>
-                </div>
-                <div class="top-social">
-                    <span>TR</span> | <span>EN</span>
+                    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l2.27-2.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> +90 532 520 91 87</span>
+                    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> info@emelkartal.com.tr</span>
                 </div>
             </div>
         </div>
@@ -38,11 +38,16 @@ const currentPath = pathname.replace(/\/$/, ""); // Sondaki slash'i temizle
         <header class="site-header">
             <div class="container header-container">
                 <a href="/" class="logo">
-                    <span class="logo-main">KARTAL YAMAN</span>
-                    <span class="logo-sep"></span>
-                    <span class="logo-sub">HUKUK BÜROSU</span>
+                    <img src="/images/logo.png" alt="Emel Kartal Yaman" class="header-logo-img" />
                 </a>
-                <nav class="main-nav">
+                
+                <button class="hamburger" id="hamburger-btn" aria-label="Menü">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+
+                <nav class="main-nav" id="mobile-menu">
                     <a href="/" class={currentPath === '' ? 'active' : ''}>ANA SAYFA</a>
                     <a href="/hakkimizda" class={currentPath === '/hakkimizda' ? 'active' : ''}>HAKKIMIZDA</a>
                     <a href="/ekibimiz" class={currentPath === '/ekibimiz' ? 'active' : ''}>EKİBİMİZ</a>
@@ -61,9 +66,7 @@ const currentPath = pathname.replace(/\/$/, ""); // Sondaki slash'i temizle
             <div class="container footer-grid">
                 <div class="footer-col">
                     <div class="footer-logo">
-                        <span class="logo-main white">KARTAL YAMAN</span>
-                        <span class="logo-sep"></span>
-                        <span class="logo-sub">HUKUK BÜROSU</span>
+                        <img src="/images/logo.png" alt="Emel Kartal Yaman" class="footer-logo-img" />
                     </div>
                     <p class="footer-desc">Hukuki süreçlerinizde şeffaflık, dürüstlük ve profesyonellik ilkeleriyle yanınızdayız.</p>
                 </div>
@@ -91,7 +94,7 @@ const currentPath = pathname.replace(/\/$/, ""); // Sondaki slash'i temizle
                     <h4>İLETİŞİM</h4>
                     <div class="contact-info">
                         <p>Adres: Kartal Yaman Hukuk Plaza, İstanbul</p>
-                        <p>Telefon: 0212 555 55 55</p>
+                        <p>Telefon: 0532 520 91 87</p>
                         <p>E-posta: info@kartalyamanhukuk.com</p>
                     </div>
                 </div>
@@ -107,7 +110,7 @@ const currentPath = pathname.replace(/\/$/, ""); // Sondaki slash'i temizle
                 </div>
             </div>
         </footer>
-	<script>
+<script>
       if (window.netlifyIdentity) {
         window.netlifyIdentity.on("init", user => {
           if (!user) {
@@ -117,6 +120,27 @@ const currentPath = pathname.replace(/\/$/, ""); // Sondaki slash'i temizle
           }
         });
       }
+
+      // LOADER İÇİN (Tüm resimler vs. yüklenince çalışır)
+      window.addEventListener('load', () => {
+        const loader = document.getElementById('page-loader');
+        if (loader) {
+            loader.classList.add('loader-hidden');
+        }
+      });
+
+      // HAMBURGER MENÜ İÇİN (DOM iskeleti hazır olunca çalışır)
+      window.addEventListener('DOMContentLoaded', () => {
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (hamburgerBtn && mobileMenu) {
+            hamburgerBtn.addEventListener('click', () => {
+                hamburgerBtn.classList.toggle('is-active');
+                mobileMenu.classList.toggle('open');
+            });
+        }
+      });
     </script>
   </body>
 </html>
@@ -157,7 +181,7 @@ const currentPath = pathname.replace(/\/$/, ""); // Sondaki slash'i temizle
     }
 
     /* TOP BAR & HEADER */
-    .top-bar { background-color: var(--dark-green); padding: 10px 0; color: #A0B0AA; font-size: 0.8rem; }
+    .top-bar { background-color: var(--dark-green); padding: 10px 0; color: var(--brand-red); font-size: 0.8rem; }
     .top-bar-container { display: flex; justify-content: space-between; align-items: center; }
     .top-info { display: flex; gap: 20px; }
     .top-info span { display: flex; align-items: center; gap: 6px; }
@@ -182,7 +206,7 @@ const currentPath = pathname.replace(/\/$/, ""); // Sondaki slash'i temizle
     .main-nav a:hover, .main-nav a.active { color: var(--gold); }
 
     /* FOOTER */
-    .site-footer { background-color: #0E1A17; color: #94A3B8; padding: 80px 0 0; }
+    .site-footer { background-color: var(--brand-footer-dark); color: #94A3B8; padding: 80px 0 0; }
     .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 50px; margin-bottom: 60px; }
     .footer-col h4 { color: var(--white); font-size: 1rem; margin-bottom: 25px; letter-spacing: 1px; }
     .footer-logo { margin-bottom: 20px; }
@@ -191,15 +215,114 @@ const currentPath = pathname.replace(/\/$/, ""); // Sondaki slash'i temizle
     .footer-links li { margin-bottom: 12px; }
     .footer-links a { color: #94A3B8; font-size: 0.9rem; transition: color 0.3s; }
     .footer-links a:hover { color: var(--gold); }
-    .footer-bottom { background-color: #0A1311; padding: 25px 0; border-top: 1px solid rgba(255,255,255,0.05); }
+    .footer-bottom { background-color: var(--brand-footer-bottom); padding: 25px 0; border-top: 1px solid rgba(255,255,255,0.05); }
     .bottom-container { display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; color: #64748B; }
     .baro-tags { display: flex; gap: 20px; color: var(--gold); font-weight: 500; }
 
+
+    /* YENİ LOGO BOYUTLANDIRMALARI */
+.header-logo-img {
+    max-height: 60px; /* Header'a sığması için ideal, duruma göre büyüt/küçült */
+    width: auto;
+}
+
+.footer-logo-img {
+    max-height: 70px;
+    width: auto;
+    /* Footer koyu renkse logo görünmez, bu kod logoyu bembeyaz yapar. */
+    filter: brightness(0) invert(1); 
+}
+
+/* LOADER (YÜKLEME EKRANI) STİLLERİ */
+#page-loader {
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    background-color: var(--bg-cream); /* Arka plan krem rengi */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999; /* Her şeyin üstünde dursun amk */
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.loader-icon {
+    width: 100px;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+/* Nabız gibi atma efekti */
+@keyframes pulse {
+    0% { transform: scale(0.9); opacity: 0.7; }
+    50% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(0.9); opacity: 0.7; }
+}
+
+.loader-hidden {
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+
+/* HAMBURGER MENÜ STİLLERİ (Masaüstünde gizli) */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001; /* Menü açılınca üstte kalsın diye */
+}
+
+.hamburger .bar {
+    height: 3px;
+    width: 100%;
+    background-color: var(--brand-red); /* O tok bordo rengimiz */
+    border-radius: 4px;
+    transition: all 0.3s ease-in-out;
+}
     @media (max-width: 992px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
     @media (max-width: 768px) {
-        .top-bar { display: none; }
-        .header-container { flex-direction: column; gap: 15px; }
-        .main-nav { flex-wrap: wrap; justify-content: center; }
+    .top-bar { display: none; }
+    
+    /* Logo ve hamburgeri yan yana tutuyoruz, menü aşağıya düşsün diye wrap atıyoruz */
+    .header-container { 
+        flex-direction: row; 
+        justify-content: space-between; 
+        flex-wrap: wrap; 
+        gap: 0; 
+    }
+    
+    .hamburger { display: flex; } /* Mobilde butonu göster */
+    
+    /* Menüyü başlangıçta gizliyoruz (Yükseklik 0) */
+    .main-nav { 
+        width: 100%;  
+        flex-wrap:wrap;
+        justify-content: center; 
+        gap: 20px; 
+        max-height: 0; 
+        overflow: hidden; 
+        opacity: 0; 
+        transition: max-height 0.4s ease, opacity 0.4s ease, padding 0.4s ease;
+        padding-top: 0;
+    }
+    
+    /* JavaScript ile .open class'ı eklenince menü kayarak açılacak */
+    .main-nav.open { 
+        max-height: 400px; /* Menünün sığacağı kadar tahmini alan */
+        opacity: 1; 
+        padding-top: 20px; /* Logo ile arasına biraz nefes payı */
+    }
+
+    /* Hamburger tıklanınca ikon çarpıya (X) dönüşsün (Premium detay) */
+    .hamburger.is-active .bar:nth-child(1) { transform: translateY(8.5px) rotate(45deg); }
+    .hamburger.is-active .bar:nth-child(2) { opacity: 0; }
+    .hamburger.is-active .bar:nth-child(3) { transform: translateY(-8.5px) rotate(-45deg); }
         .footer-grid { grid-template-columns: 1fr; text-align: center; }
         .footer-logo { align-items: center; margin: 0 auto 20px; }
         .bottom-container { flex-direction: column; gap: 15px; text-align: center; }

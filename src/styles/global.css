@@ -1,12 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
 
 :root {
-  /* Resimdeki renk paleti */
-  --dark-green: #14241F;
-  /* O tok çam yeşili */
-  --gold: #B48D52;
-  /* Mat altın sarısı */
-  --gold-hover: #9E7A44;
+  --brand-red: #9E3A3A;
+  /* Kartvizitin o tok kiremit/bordo arka planı */
+  --gold: #D4A36A;
+  /* Kartvizitteki yazılar ve logonun altın sarısı */
+  --gold-hover: #B88A55;
+  /* Butonların üzerine gelince parlaması için bir tık koyusu */
+
+  --brand-footer-dark: #1E0B0B;
+  /* Footer'ın ana rengi için çok koyu bordo */
+  --brand-footer-bottom: #140707;
+  /* En alttaki telif hakkı kısmı için daha da koyu ton */
+
   --bg-cream: #FAF9F6;
   /* Kırık beyaz/krem arka plan */
   --text-main: #333333;
@@ -33,7 +39,7 @@ h2,
 h3,
 h4 {
   font-family: 'Playfair Display', serif;
-  color: var(--dark-green);
+  color: var(--brand-red);
   font-weight: 600;
 }
 
@@ -115,7 +121,7 @@ a {
 .step-content h3 {
   font-size: 1.2rem;
   margin-bottom: 15px;
-  color: var(--dark-green);
+  color: var(--brand-red);
 }
 
 .step-content p {
@@ -127,7 +133,7 @@ a {
 /* İletişim Formu Alanı */
 .contact-section {
   padding: 100px 0;
-  background-color: var(--dark-green);
+  background-color: var(--brand-red);
   color: var(--white);
 }
 
@@ -168,7 +174,7 @@ a {
 }
 
 .contact-form-wrapper h3 {
-  color: var(--dark-green);
+  color: var(--brand-red);
   margin-bottom: 30px;
   font-size: 1.5rem;
 }
@@ -182,7 +188,7 @@ a {
   font-size: 0.85rem;
   font-weight: 600;
   margin-bottom: 8px;
-  color: var(--dark-green);
+  color: var(--brand-red);
 }
 
 .form-group input,
@@ -211,27 +217,45 @@ a {
 }
 
 @media (max-width: 992px) {
-  .process-grid { 
-    grid-template-columns: repeat(2, 1fr); /* Tablette 2-2 bölünsün */
-    gap: 50px; 
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+    /* Tablette 2-2 bölünsün */
+    gap: 50px;
   }
 }
+
 @media (max-width: 576px) {
-  .process-grid { 
-    grid-template-columns: 1fr; /* Telefonda alt alta tek sıra */
+  .process-grid {
+    grid-template-columns: 1fr;
+    /* Telefonda alt alta tek sıra */
   }
 }
 
 /* --- EKSTRA MOBİL İNCE AYARLAR --- */
 @media (max-width: 576px) {
+
   /* Süreç (Nasıl Çalışıyoruz) mobilde tek sıra alt alta zaten ayarlamıştık, ekstra padding kısıyoruz */
-  .process { padding: 60px 0; }
-  .contact-section { padding: 60px 0; }
-  
+  .process {
+    padding: 60px 0;
+  }
+
+  .contact-section {
+    padding: 60px 0;
+  }
+
   /* Form mobilde çok boşluk kaplamasın, inputlara yer kalsın */
-  .contact-form-wrapper { padding: 25px 20px; }
-  .contact-form-wrapper h3 { font-size: 1.3rem; margin-bottom: 20px; }
-  
+  .contact-form-wrapper {
+    padding: 25px 20px;
+  }
+
+  .contact-form-wrapper h3 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+  }
+
   /* İletişim bilgileri yazısı mobilde taşmasın */
-  .contact-info-box h2 { font-size: 2rem; margin-bottom: 20px; }
+  .contact-info-box h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
 }
