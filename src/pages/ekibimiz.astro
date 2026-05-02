@@ -6,7 +6,7 @@ const teamMembers = [
     name: "Av. Emel Kartal Yaman",
     title: "Kurucu & Yönetici Avukat",
     desc: "Bilişim Hukuku, Yapay Zeka ve Kripto Varlıklar alanında derin mühendislik ve hukuk tecrübesiyle büromuzun kurucusudur.",
-    image: "/images/teammember.jpg",
+    image: "/images/emel_kartal_yaman.jpeg",
     cardImage: "/images/kartvizit_emel_kartal_yaman.jpg",
     phone: "+905325209187",
     email: "info@emelkartal.com.tr",
@@ -16,12 +16,22 @@ const teamMembers = [
     name: "Av. Erkin Doğaç Karakuş",
     title: "Avukat",
     desc: "Şirketler Hukuku ve Ticari Sözleşmeler alanında uzmanlaşmış, arabuluculuk siciline kayıtlı avukatımızdır.",
-    image: "/images/teammember.jpg",
+    image: "/images/erkin_dogac_karakus.jpeg",
     cardImage: "/images/kartvizit_erkin_dogac_karakus.jpg",
     phone: "+905555555555",
     email: "erkin@emelkartal.com.tr",
     linkedin: "#"
   },
+  {
+    name: "Doç. Dr. Eray Aksın Atar",
+    title: "Ofis Danışmanı / Akademisyen",
+    desc: "Kırklareli Üniv. Dekan Yardımcısı. Medeni Hukuk, Borçlar Hukuku ve Fikri Mülkiyet alanlarında akademik danışmanımızdır.",
+    image: "/images/eray_aksin_atar.png",
+    cardImage: "/images/erkin_dogac_karakus.jpg", // Kartviziti gelince değiştir
+    phone: "+902882141000",
+    email: "erayaksinatar@klu.edu.tr",
+    linkedin: "#"
+  }
 ];
 ---
 
@@ -29,7 +39,7 @@ const teamMembers = [
   <section class="page-header">
     <div class="container">
       <h1>Hukuk Kadromuz</h1>
-      <p>Alanında uzman, tecrübeli ve dinamik avukat kadromuzla hakkınızı sonuna kadar savunuyoruz.</p>
+      <p>Alanında uzman, tecrübeli ve dinamik kadromuzla hakkınızı sonuna kadar savunuyoruz.</p>
     </div>
   </section>
 
@@ -39,16 +49,18 @@ const teamMembers = [
         {teamMembers.map((member) => (
           <div class="team-card">
             <div class="card-image">
-              <img src={member.image} alt={member.name} class="profile-photo" />
+              <img src={member.image} alt={member.name} class="profile-photo" loading="lazy" />
               
               <div class="business-card-overlay">
                 <div class="card-actions">
                     <a href={`tel:${member.phone}`} title="Ara"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l2.27-2.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a>
                     <a href={`mailto:${member.email}`} title="E-posta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
-                    <a href={member.linkedin} target="_blank" title="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+                    {member.linkedin !== "#" && (
+                        <a href={member.linkedin} target="_blank" title="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+                    )}
                 </div>
 
-                <img src={member.cardImage} alt={`${member.name} Kartvizit`} class="b-card-img" />
+                <img src={member.cardImage} alt={`${member.name} Kartvizit`} class="b-card-img" loading="lazy" />
               </div>
             </div>
             <div class="card-info">
@@ -64,6 +76,7 @@ const teamMembers = [
 </Layout>
 
 <style>
+  /* Eski stillerin tamamen aynısı, dokunmadım */
   .page-header { background-color: var(--brand-red); color: var(--white); padding: 70px 15px; text-align: center; }
   .page-header h1 { font-family: 'Playfair Display', serif; font-size: 2.8rem; margin-bottom: 15px; color: var(--white); }
   .page-header p { color: #E5D5C5; max-width: 650px; margin: 0 auto; line-height: 1.8; font-size: 1.15rem; }
@@ -74,9 +87,9 @@ const teamMembers = [
     grid-template-columns: repeat(auto-fit, minmax(280px, 350px)); 
     gap: 40px;
     justify-content: center;
-}
+  }
 
-.team-card {
+  .team-card {
     max-width: 350px;
     width: 100%;
     background: var(--white); border-radius: 8px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: transform 0.3s ease; }
@@ -88,15 +101,14 @@ const teamMembers = [
   
   .team-card:hover .profile-photo { transform: scale(1.05); filter: brightness(0.3); }
 
-  /* Kartvizit ve Buton Overlay */
   .business-card-overlay { 
     position: absolute; 
     inset: 0;
     display: flex; 
     flex-direction: column;
-    justify-content: space-between; /* Butonlar üste, kartvizit alta */
+    justify-content: space-between; 
     align-items: center;
-    padding: 20px 0 0 0; /* Alta boşluk bırakmıyoruz ki kart yapışsın */
+    padding: 20px 0 0 0; 
     transform: translateY(100%); 
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 2;
@@ -104,13 +116,12 @@ const teamMembers = [
   
   .team-card:hover .business-card-overlay { transform: translateY(0); }
 
-  /* Üst Butonlar */
   .card-actions {
       display: flex;
       gap: 15px;
       opacity: 0;
       transform: translateY(-20px);
-      transition: all 0.4s ease 0.2s; /* Gecikmeli gelsin şık durur */
+      transition: all 0.4s ease 0.2s; 
   }
   .team-card:hover .card-actions { opacity: 1; transform: translateY(0); }
 
@@ -128,13 +139,11 @@ const teamMembers = [
   .card-actions a:hover { background: white; color: var(--brand-red); transform: scale(1.1); }
   .card-actions svg { width: 20px; height: 20px; }
 
-  /* Alta Yapışık Kartvizit Görseli */
   .b-card-img { 
     width: 100%; 
     height: auto; 
-    /* Alta tam yapışması için margin-bottom: 0 */
     box-shadow: 0 -5px 25px rgba(0,0,0,0.3);
-    border-radius: 8px 8px 0 0; /* Sadece üst köşeler yuvarlak, alta tam otursun */
+    border-radius: 8px 8px 0 0; 
   }
 
   .card-info { padding: 35px 30px; text-align: center; border-top: 3px solid var(--gold); }
@@ -146,6 +155,5 @@ const teamMembers = [
     .page-header { padding: 60px 0; }
     .page-header h1 { font-size: 2.3rem; }
     .team-grid { gap: 30px; }
-    /* Mobilde direkt görünsün istersen hover'ı kaldırıp transform:none yapabilirsin */
   }
 </style>

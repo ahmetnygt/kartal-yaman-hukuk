@@ -55,9 +55,9 @@ const newsItems = [
 	<section class="about">
 		<div class="container about-grid">
 			<div class="about-images-grid">
-				<img src="/images/about_1.jpg" alt="Ana Ofis" class="img-tall" />
+				<img src="/images/place1.jpeg" alt="Ana Ofis" class="img-tall" />
 				<img src="/images/about_2.jpg" alt="Detay" class="img-top-right" />
-				<img src="/images/about_2.jpg" alt="Detay 2" class="img-bottom-right" />
+				<img src="/images/place2.jpeg" alt="Detay 2" class="img-bottom-right" />
 			</div>
 			<div class="about-text">
 				<div class="section-title">
@@ -74,47 +74,61 @@ const newsItems = [
 		</div>
 	</section>
 
-	<section class="services">
-		<div class="container">
-			<div class="section-title centered">
-				<span>HİZMETLERİMİZ</span>
-				<h2>Faaliyet Alanlarımız</h2>
-			</div>
-			
-			<div class="services-grid">
-				<div class="service-card">
-					<div class="card-icon">
-						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-					</div>
-					<h3>Ceza Hukuku</h3>
-					<p>Soruşturma ve kovuşturma aşamalarında, kişi hak ve hürriyetlerinin korunması kapsamında etkin hukuki destek sağlıyoruz.</p>
-					<a href="/faaliyet-alanlarimiz/sirketler-ve-ticaret-hukuku" class="read-more">DETAYLI BİLGİ &rarr;</a>
-				</div>
-				
-				<div class="service-card">
-					<div class="card-icon">
-						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-					</div>
-					<h3>İş Hukuku</h3>
-					<p>İşçi ve işveren uyuşmazlıkları, sözleşmelerin tanzimi ve arabuluculuk süreçlerinin titizlikle yönetimi.</p>
-					<a href="/faaliyet-alanlarimiz/sirketler-ve-ticaret-hukuku" class="read-more">DETAYLI BİLGİ &rarr;</a>
-				</div>
+	<section class="faaliyetler-section">
+    <div class="container">
+        <h2 class="section-heading">Faaliyet Alanlarımız</h2>
+        
+        <div class="faaliyet-grid">
+            <!-- 1. Kutu -->
+            <a href="/faaliyet-alanlarimiz/sirketler-ve-ticaret-hukuku" class="faaliyet-kart">
+                <img src="/images/sirketler-hukuku.jpg" alt="Şirketler ve Ticaret Hukuku" class="faaliyet-img" />
+                <div class="faaliyet-overlay">
+                    <h3>Şirketler ve Ticaret Hukuku</h3>
+                </div>
+            </a>
 
-				<div class="service-card">
-					<div class="card-icon">
-						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
-					</div>
-					<h3>Aile Hukuku</h3>
-					<p>Boşanma, nafaka, velayet ve mal rejiminin tasfiyesi gibi hassas süreçlerde gizlilik esaslı danışmanlık.</p>
-					<a href="/faaliyet-alanlarimiz/sirketler-ve-ticaret-hukuku" class="read-more">DETAYLI BİLGİ &rarr;</a>
-				</div>
-			</div>
+            <!-- 2. Kutu -->
+            <a href="/faaliyet-alanlarimiz" class="faaliyet-kart">
+                <img src="/images/ceza-hukuku.jpg" alt="Ceza Hukuku" class="faaliyet-img" />
+                <div class="faaliyet-overlay">
+                    <h3>Ceza Hukuku</h3>
+                </div>
+            </a>
 
-			<div style="text-align: center; margin-top: 60px;">
-				<a href="/faaliyet-alanlarimiz" class="btn-gold outline">Tüm Faaliyet Alanlarımız</a>
-			</div>
-		</div>
-	</section>
+            <!-- 3. Kutu -->
+            <a href="/faaliyet-alanlarimiz" class="faaliyet-kart">
+                <img src="/images/is-hukuku.jpg" alt="İş Hukuku" class="faaliyet-img" />
+                <div class="faaliyet-overlay">
+                    <h3>İş Hukuku</h3>
+                </div>
+            </a>
+
+            <!-- 4. Kutu -->
+            <a href="/faaliyet-alanlarimiz" class="faaliyet-kart">
+                <img src="/images/aile-hukuku.jpg" alt="Aile Hukuku" class="faaliyet-img" />
+                <div class="faaliyet-overlay">
+                    <h3>Aile Hukuku</h3>
+                </div>
+            </a>
+
+            <!-- 5. Kutu -->
+            <a href="/faaliyet-alanlarimiz" class="faaliyet-kart">
+                <img src="/images/gayrimenkul-hukuku.jpg" alt="Gayrimenkul Hukuku" class="faaliyet-img" />
+                <div class="faaliyet-overlay">
+                    <h3>Gayrimenkul Hukuku</h3>
+                </div>
+            </a>
+
+            <!-- 6. Kutu -->
+            <a href="/faaliyet-alanlarimiz" class="faaliyet-kart">
+                <img src="/images/icra-hukuku.jpg" alt="İcra ve İflas Hukuku" class="faaliyet-img" />
+                <div class="faaliyet-overlay">
+                    <h3>İcra ve İflas Hukuku</h3>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
 
 	<section class="press-section">
 		<div class="container">
@@ -188,15 +202,15 @@ const newsItems = [
 				<div class="contact-details">
 					<div class="contact-item">
 						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l2.27-2.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-						<span>+90 555 555 55 55</span>
+						<span>+90 532 520 91 87</span>
 					</div>
 					<div class="contact-item">
 						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-						<span>info@kartalyamanhukuk.com</span>
+						<span>info@emelkartal.com.tr</span>
 					</div>
 					<div class="contact-item">
 						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-						<span>Kartal Yaman Hukuk Plaza, İstanbul</span>
+						<span>Yeni, İstanbul Cd. Şimşek Apt No:65 Kat 1 Daire 1, 39750 Lüleburgaz/Kırklareli</span>
 					</div>
 				</div>
 			</div>
@@ -410,6 +424,95 @@ const newsItems = [
 @media (max-width: 768px) {
     .press-grid {
         grid-template-columns: 1fr; /* Mobilde alt alta tek sıra dilsin */
+    }
+}
+
+.faaliyetler-section {
+    padding: 80px 0;
+    background-color: var(--bg-cream, #f8f9fa);
+}
+
+.section-heading {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--dark-green, #1a3622);
+    margin-bottom: 50px;
+}
+
+.faaliyet-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.faaliyet-kart {
+    position: relative;
+    display: block;
+    border-radius: 8px;
+    overflow: hidden;
+    aspect-ratio: 4 / 3; /* Resimlerin hepsi aynı hizada dursun diye */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-decoration: none;
+}
+
+.faaliyet-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.faaliyet-kart:hover .faaliyet-img {
+    transform: scale(1.08); /* Fareyle üzerine gelince klas bir şekilde büyüyecek */
+}
+
+.faaliyet-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 20px 20px;
+    /* Alta doğru koyulaşan ama siteye uyan tok bir gradient */
+    background: linear-gradient(to top, rgba(20, 5, 5, 0.95), rgba(20, 5, 5, 0.5) 60%, transparent); 
+    text-align: center;
+    transition: all 0.4s ease;
+}
+
+.faaliyet-overlay h3 {
+    margin: 0;
+    font-family: 'Playfair Display', serif; /* Hukuk bürosu fontu */
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--gold); /* Düz beyaz yerine o pavyon... pardon altın sarısı */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8); /* Yazı fırlasın diye gölge */
+    transition: transform 0.3s ease;
+}
+
+.faaliyet-kart:hover .faaliyet-overlay {
+    padding-bottom: 30px; 
+    background: linear-gradient(to top, rgba(20, 5, 5, 0.98), rgba(20, 5, 5, 0.7) 70%, transparent);
+}
+
+.faaliyet-kart:hover .faaliyet-overlay h3 {
+    transform: translateY(-5px); /* Fareyle üstüne gelince yazı hafif yukarı sekecek */
+    color: var(--white); /* Üstüne gelince beyaza dönsün, şov olsun */
+}
+
+/* Mobil için tek sütuna, tablet için 2 sütuna düşürme */
+@media (max-width: 992px) {
+    .faaliyet-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .faaliyet-grid {
+        grid-template-columns: 1fr;
+    }
+    .section-heading {
+        font-size: 2rem;
     }
 }
 </style>
