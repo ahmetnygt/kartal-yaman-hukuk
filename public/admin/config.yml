@@ -1,0 +1,19 @@
+backend:
+  name: git-gateway
+  branch: main # Hangi branch'e push atacağı
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "makaleler"
+    label: "Hukuki Makaleler"
+    folder: "src/content/makaleler" # Astro'nun bu dosyaları okuyacağı yer
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Başlık", name: "title", widget: "string"}
+      - {label: "Tarih", name: "date", widget: "datetime"}
+      - {label: "Yazar", name: "author", widget: "string", default: "Av. Kartal Yaman"}
+      - {label: "Özet", name: "description", widget: "text"}
+      - {label: "İçerik", name: "body", widget: "markdown"}

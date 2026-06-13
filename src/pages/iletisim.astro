@@ -1,0 +1,156 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="İletişim">
+  
+  <section class="page-header">
+    <div class="container">
+      <h1>Bize Ulaşın</h1>
+      <p>Hukuki danışmanlık talepleriniz veya sorularınız için bizimle iletişime geçebilirsiniz. Uzman kadromuz en kısa sürede size dönüş yapacaktır.</p>
+    </div>
+  </section>
+
+  <section class="contact-page-content">
+    <div class="container">
+      <div class="contact-main-grid">
+        
+        <div class="contact-info-column">
+          <div class="info-card">
+            <span class="info-label">ADRESİMİZ</span>
+            <h3>Kartal Yaman Hukuk Plaza</h3>
+            <p>Yeni, İstanbul Cd. Şimşek Apt No:65 Kat 1 Daire 1, 39750 Lüleburgaz/Kırklareli</p>
+          </div>
+
+          <div class="info-card">
+            <span class="info-label">BİZE ULAŞIN</span>
+            <div class="contact-links">
+              <a href="tel:+905325209187"><strong>T:</strong> 0532 520 91 87</a>
+              <a href="mailto:info@emelkartal.com.tr"><strong>E:</strong> info@emelkartal.com.tr</a>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <span class="info-label">ÇALIŞMA SAATLERİ</span>
+            <p>Pazartesi - Cuma: 09:00 - 18:00<br />Cumartesi: 10:00 - 14:00</p>
+          </div>
+        </div>
+
+        <div class="contact-form-column">
+  <div class="form-wrapper">
+    <h2>Hukuki Danışmanlık Formu</h2>
+    <p>Lütfen mesajınızı ve iletişim bilgilerinizi eksiksiz doldurunuz.</p>
+    
+    <form name="detayli-iletisim" method="POST" data-netlify="true" class="custom-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label>ADINIZ SOYADINIZ</label>
+          <input type="text" placeholder="Örn: Ahmet Yılmaz" required />
+        </div>
+        <div class="form-group">
+          <label>E-POSTA ADRESİNİZ</label>
+          <input type="email" placeholder="orn@email.com" required />
+        </div>
+      </div>
+      <button type="submit" class="btn-gold full-btn">MESAJI GÖNDER</button>
+    </form>
+
+    <div class="whatsapp-direct-box" style="margin-top: 35px; text-align: center; border-top: 1px dashed #E2E8F0; padding-top: 25px;">
+      <p style="margin-bottom: 15px; font-size: 0.95rem; color: var(--text-muted);">Form doldurmak yerine doğrudan avukatımızla görüşün:</p>
+      <a href="https://wa.me/905325209187" target="_blank" class="btn-whatsapp-direct">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" style="margin-right: 8px;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        WhatsApp İletişim Hattı
+      </a>
+    </div>
+  </div>
+</div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="map-section">
+    <div class="container full-map">
+      <div class="map-placeholder">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2992.58583375336!2d27.355356900000004!3d41.4048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47906b19b26255cf%3A0x6c606c7559348a2e!2sAVUKAT%20EMEL%20KARTAL%20YAMAN!5e0!3m2!1str!2str!4v1777727899195!5m2!1str!2str" 
+          width="100%" 
+          height="450" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  /* SAYFA ÜSTÜ */
+  .page-header {
+    background-color: var(--brand-red);
+    color: var(--white);
+    padding: 50px 15px;
+    text-align: center;
+  }
+  .page-header h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 15px; color: var(--white); }
+  .page-header p { color: var(--white); max-width: 650px; margin: 0 auto; line-height: 1.8; }
+
+  /* ANA İÇERİK */
+  .contact-page-content { padding: 50px; background-color: var(--bg-cream); }
+  .contact-main-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 80px; align-items: start; }
+
+  /* SOL KOLON BİLGİLER */
+  .contact-info-column { display: flex; flex-direction: column; gap: 40px; }
+  .info-card { border-left: 3px solid var(--gold); padding-left: 25px; }
+  .info-label { display: block; font-size: 0.75rem; color: var(--gold); font-weight: 600; letter-spacing: 2px; margin-bottom: 10px; }
+  .info-card h3 { font-size: 1.5rem; color: var(--brand-red); margin-bottom: 10px; font-family: 'Playfair Display', serif; }
+  .info-card p, .contact-links a { color: var(--text-muted); line-height: 1.7; font-size: 1rem; text-decoration: none; display: block; }
+  .contact-links a:hover { color: var(--gold); }
+  .contact-links strong { color: var(--brand-red); }
+
+  /* SAĞ KOLON FORM */
+  .form-wrapper { background: var(--white); padding: 50px; border-radius: 4px; box-shadow: 0 10px 40px rgba(0,0,0,0.05); }
+  .form-wrapper h2 { font-family: 'Playfair Display', serif; color: var(--brand-red); font-size: 2rem; margin-bottom: 10px; }
+  .form-wrapper p { color: var(--text-muted); margin-bottom: 40px; }
+
+  .custom-form .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .form-group { margin-bottom: 25px; }
+  .form-group label { display: block; font-size: 0.8rem; font-weight: 600; color: var(--brand-red); margin-bottom: 10px; letter-spacing: 0.5px; }
+  .form-group input, .form-group textarea {
+    width: 100%; padding: 15px; border: 1px solid #E2E8F0; border-radius: 4px; background: #F9FAFB; font-family: 'Inter', sans-serif;
+  }
+  .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--gold); background: var(--white); }
+  .full-btn { width: 100%; padding: 18px; font-weight: 600; }
+
+  /* HARİTA */
+  .map-section { padding-bottom: 100px; background-color: var(--bg-cream); }
+  .full-map { border-radius: 4px; overflow: hidden; box-shadow: 0 5px 30px rgba(0,0,0,0.1); }
+
+  /* MOBİL AYARLAR */
+  @media (max-width: 992px) {
+    .contact-main-grid { grid-template-columns: 1fr; gap: 60px; }
+    .form-wrapper { padding: 30px; }
+    .custom-form .form-row { grid-template-columns: 1fr; }
+  }
+
+  .btn-whatsapp-direct {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #25D366;
+    color: #FFFFFF;
+    width: 100%;
+    padding: 15px;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.2);
+}
+.btn-whatsapp-direct:hover {
+    background-color: #1EBE55;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(37, 211, 102, 0.3);
+}
+</style>

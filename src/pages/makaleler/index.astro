@@ -1,0 +1,105 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+// Tüm makaleleri çekip tarihe göre yeninden eskiye sıralıyoruz
+const butunMakaleler = await getCollection('makaleler');
+const siraliMakaleler = butunMakaleler.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+// Anasayfadaki basın haberlerini buraya taşıdık
+const newsItems = [
+  { title: "Dijital Çağın Hukukçu Gözü", source: "Görünüm Gazetesi", link: "https://www.gorunumgazetesi.com.tr/post/dijital-%C3%A7a%C4%9F%C4%B1n-hukuk%C3%A7u-g%C3%B6z%C3%BC" },
+  { title: "Genç Avukat Emel Kartal Yaman Hukuk Bürosunun Açılışı Yapıldı", source: "Manşet Haber Gazetesi", link: "https://www.mansethabergazetesi.com/haber/genc-avukat-emel-kartal-yaman-hukuk-burosunun-acilisi-yapildi-5728" },
+  { title: "Avukat Emel Yaman Hukuk Bürosu Açıldı", source: "Alternatif Gazetesi", link: "https://www.alternatifgazetesi.com/avukat-emel-yaman-hukuk-burosu-acildi" },
+  { title: "Emel Kartal Yaman Hukuk Bürosu Açıldı", source: "Görünüm Gazetesi", link: "https://www.gorunumgazetesi.com.tr/post/emel-kartal-yaman-hukuk-b%C3%BCrosu-a%C3%A7%C4%B1ld%C4%B1" },
+  { title: "Avukat Emel Kartal Yaman Lüleburgaz'da Göreve Başlıyor", source: "Alternatif Gazetesi", link: "https://www.alternatifgazetesi.com/avukat-emel-kartal-yaman-luleburgazda-goreve-basliyor" },
+  { title: "Lüleburgaz’da Yeni Hukuk Bürosu Açıldı", source: "Hürfikir Gazetesi", link: "https://www.hurfikir.com.tr/2026/02/17/luleburgazda-yeni-hukuk-burosu-acildi/" }
+];
+---
+
+<Layout title="Makaleler & Basında Biz">
+  <section class="page-header">
+    <div class="container">
+      <h1>Makaleler & Basın</h1>
+      <p>Güncel hukuki gelişmeler, akademik makalelerimiz ve hakkımızda basında çıkan haberler.</p>    
+    </div>
+  </section>
+
+    <div class="container" style="margin-top: 60px;">
+    <div class="section-title centered">
+        <span style="color: var(--gold); font-family: 'Inter', sans-serif; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2.5px; font-weight: 600; display: block; margin-bottom: 12px;">MEDYADA BİZ</span>
+        <h2 style="font-size: 2.4rem; color: var(--brand-red); font-family: 'Playfair Display', serif;">Basında Emel Kartal Yaman</h2>
+    </div>
+    <div class="press-grid">
+        {newsItems.map((item) => (
+            <a href={item.link} target="_blank" class="press-card">
+                <div class="press-content">
+                    <span class="press-source">{item.source}</span>
+                    <h3>{item.title}</h3>
+                    <span class="read-news">HABERİ OKU &rarr;</span>
+                </div>
+            </a>
+        ))}
+    </div>
+  </div>
+
+  <div class="container" style="margin-top: 50px;">
+    <h2 style="font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--brand-red); text-align: center; margin-bottom: 20px;">Hukuki Makaleler</h2>
+  </div>
+  
+  <div class="article-grid">
+    {siraliMakaleler.map((makale) => (
+      <article class="article-card">
+        <h2><a href={`/makaleler/${makale.id}`}>{makale.data.title}</a></h2>
+        <div class="meta">
+          <span>{makale.data.author}</span> | 
+          <time>{makale.data.date.toLocaleDateString('tr-TR')}</time>
+        </div>
+        <p>{makale.data.description}</p>
+        <a href={`/makaleler/${makale.id}`} class="read-more">Devamını Oku &rarr;</a>
+      </article>
+    ))}
+  </div>
+  <div style="height: 60px;"></div>
+</Layout>
+
+<style>
+  .page-header { background-color: var(--brand-red); color: var(--white); padding: 50px 15px; text-align: center; }
+  .page-header h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 15px; color: var(--white); }
+  .page-header p { color: var(--white); max-width: 650px; margin: 0 auto; line-height: 1.8; font-size: 1.1rem; }
+
+  .article-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px 50px;
+  }
+  .article-card {
+    background: var(--white); padding: 30px; border-left: 4px solid var(--brand-red); box-shadow: 0 4px 20px rgba(0,0,0,0.03); transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .article-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+  .article-card h2 a { color: var(--brand-red); text-decoration: none; font-size: 1.25rem; font-family: 'Playfair Display', serif; }
+  .read-more { display: inline-block; margin-top: 15px; color: var(--gold); text-decoration: none; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; }
+  .meta { font-size: 0.85rem; color: var(--text-muted); margin: 10px 0; }
+
+  /* Basın Kartları CSS'i (Anasayfadan çektik) */
+  .press-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+    padding: 0 50px;
+  }
+  .press-card {
+    background: var(--bg-cream); padding: 30px; border-radius: 4px; border-left: 4px solid var(--gold); transition: all 0.3s ease; display: flex; flex-direction: column; justify-content: space-between; text-decoration: none;
+  }
+  .press-card:hover { transform: translateY(-5px); background-color: var(--brand-red); }
+  .press-source { display: block; font-size: 0.75rem; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+  .press-card h3 { font-size: 1.15rem; line-height: 1.4; color: var(--brand-red); margin-bottom: 20px; font-family: 'Playfair Display', serif; }
+  .read-news { font-size: 0.8rem; font-weight: 600; color: var(--gold); letter-spacing: 0.5px; }
+  .press-card:hover .press-source, .press-card:hover h3, .press-card:hover .read-news { color: var(--white); }
+  .press-card:hover { border-left-color: var(--white); }
+
+  @media (max-width: 992px) { .press-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 768px) { .press-grid, .article-grid { grid-template-columns: 1fr; padding: 0 20px; } }
+</style>

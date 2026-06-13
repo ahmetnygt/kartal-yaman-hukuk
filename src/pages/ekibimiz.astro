@@ -1,0 +1,234 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const teamMembers = [
+  {
+    name: "Av. Emel Kartal Yaman",
+    title: "Kurucu & Yönetici Avukat",
+    desc: "2003 yılında Viyana Teknik Üniversitesi'nde Bilgisayar Bilimleri eğitimiyle başlayan kariyerini, Viyana Üniversitesi Hukuk eğitimi ve Kırklareli Üniversitesi Hukuk Fakültesi mezuniyetiyle taçlandırmıştır. Bilişim Hukuku, Yapay Zeka, Blokzincir ve Kripto Varlıklar alanında derin mühendislik ve hukuk tecrübesine sahiptir.",
+    image: "/images/emel_kartal_yaman.jpeg",
+    cardImage: "/images/kartvizit_emel_kartal_yaman.jpg",
+    phone: "+905325209187",
+    email: "info@kartalyamanhukuk.com",
+    linkedin: "https://linkedin.com/in/emel-kartal-30a2301b",
+    education: [
+      "Viyana Teknik Üniversitesi - Bilgisayar Bilimleri (Lisans)",
+      "Viyana Üniversitesi - Hukuk Eğitimi",
+      "Viyana Teknik Üniversitesi - İşletme Mühendisliği (Yüksek Lisans)",
+      "Kırklareli Üniversitesi - Hukuk Fakültesi (Lisans)"
+    ],
+    languages: ["Almanca (İleri Düzey)", "İngilizce (İleri Düzey)"]
+  },
+  {
+    name: "Av. Erkin Doğaç Karakuş",
+    title: "Avukat",
+    desc: "Modern hukukun dinamik yapısına hızla uyum sağlayan ve analitik düşünce yeteneğiyle öne çıkan Av. Erkin Doğaç Karakuş, özellikle bilişim hukuku, bilişim suçları, taşınmaz hukuku ve miras hukuku alanlarında derinlemesine uzmanlaşmıştır. Günümüzün karmaşık hukuki ihtilaflarında müvekkillerinin haklarını en üst düzeyde korumayı ilke edinen Karakuş; hukuki süreçlerin şeffaf, hızlı ve müvekkil lehine en verimli şekilde sonuçlanması adına tüm dava ve duruşma aşamalarını titizlikle ve başarıyla yönetmektedir.",
+    image: "/images/erkin_dogac_karakus.jpeg",
+    cardImage: "/images/kartvizit_erkin_dogac_karakus.jpg",
+    phone: "+905056542828",
+    email: "#",
+    linkedin: "https://linkedin.com/in/doğaç-karakuş-26028b317",
+    education: [
+      "İstanbul Üniversitesi - Hukuk Fakültesi (2019 - 2023)",
+      "İstanbul Üniversitesi - Bilgisayar Programcılığı AUZEF (2024 - 2026)"
+    ],
+    languages: ["İngilizce (İleri Düzey)"]
+  }
+];
+
+const experts = [
+  {
+    name: "Dr. Öğr. Üyesi Eray Aksın Atar",
+    title: "Danışman",
+    desc: "Kırklareli Üniversitesi Hukuk Fakültesi Dekan Yardımcısı. İstanbul Üniversitesi Hukuk Fakültesi'nde lisans, Marmara Üniversitesi'nde yüksek lisans ve Galatasaray Üniversitesi Özel Hukuk anabilim dalında doktora eğitimini tamamlamıştır. Medeni Hukuk, Borçlar Hukuku ve Fikri Mülkiyet alanlarındaki derin teorik birikimiyle büromuza akademik destek sunmaktadır.",
+    image: "/images/eray_aksin_atar.png",
+    cardImage: "/images/eray_aksin_atar.png", 
+    phone: "+905325209187",
+    email: "erayaksinatar@klu.edu.tr",
+    linkedin: "#",
+    education: [
+      "Galatasaray Üniversitesi - Özel Hukuk (Doktora)",
+      "Marmara Üniversitesi - Özel Hukuk (Yüksek Lisans)",
+      "İstanbul Üniversitesi - Hukuk Fakültesi (Lisans)"
+    ],
+    languages: ["İngilizce", "Almanca"]
+  },
+  {
+    name: "Doç. Dr. Neriman Hocaoğlu",
+    title: "Danışman",
+    desc: "Kırklareli Üniversitesi İktisadi ve İdari Bilimler Fakültesi'nde Doçent olarak görev yapmaktadır. Temel lisans eğitimlerini İstanbul Üniversitesi Mütercim Tercümanlık ve Kırklareli Üniversitesi Hukuk Fakültesi'nde tamamlamış; doktorasını Marmara Üniversitesi Avrupa Birliği Enstitüsü'nde almıştır. Kapsamlı akademik birikimi ve uluslararası vizyonuyla büromuzun stratejik hukuki danışmanlığını yürütmektedir.",
+    image: "/images/neriman_bagdadi.jpeg", 
+    cardImage: "/images/neriman_bagdadi.jpeg", 
+    phone: "+905325209187",
+    email: "nhbahadir@klu.edu.tr",
+    linkedin: "#",
+    education: [
+      "Marmara Üniversitesi - Avrupa Birliği Siy. ve Ulus. İlişkiler (Doktora)",
+      "İstanbul Üniversitesi - Avrupa Birliği (Yüksek Lisans)",
+      "Kırklareli Üniversitesi - Hukuk Fakültesi (Lisans)",
+      "İstanbul Üniversitesi - Mütercim ve Tercümanlık (Lisans)"
+    ],
+    languages: ["İngilizce", "İspanyolca", "Almanca", "Bulgarca"]
+  }
+];
+---
+
+<Layout title="Ekibimiz">
+  <section class="page-header">
+    <div class="container">
+      <h1>Ekibimiz & Kurumsal Yapımız</h1>
+      <p>Klasik hukuk disiplinlerini geleceğin teknolojileriyle harmanlayan, akademik ve operasyonel olarak sarsılmaz kadromuz.</p>
+    </div>
+  </section>
+
+  <section class="team-section">
+    <div class="container">
+      
+      <div class="section-title centered">
+        <span>PROFESYONEL KADROMUZ</span>
+        <h2>Avukatlarımız</h2>
+      </div>
+
+      <div class="member-list">
+        {teamMembers.map((member) => (
+          <div class="member-row">
+            <div class="member-image-side">
+              <div class="image-container-block">
+                <img src={member.image} alt={member.name} class="profile-photo" loading="lazy" />
+                <div class="business-card-overlay">
+                  <div class="card-actions">
+                      <a href={`tel:${member.phone}`} title="Ara"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l2.27-2.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a>
+                      <a href={`mailto:${member.email}`} title="E-posta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+                  </div>
+                  <img src={member.cardImage} alt={`${member.name} Kartvizit`} class="b-card-img" loading="lazy" />
+                </div>
+              </div>
+            </div>
+            
+            <div class="member-text-side">
+              <span class="member-row-title">{member.title}</span>
+              <h2>{member.name}</h2>
+              <p class="bio-text">{member.desc}</p>
+              
+              <div class="resume-meta-grid">
+                <div class="meta-box">
+                  <h3>Eğitim Bilgileri</h3>
+                  <ul class="resume-list">
+                    {member.education.map((edu) => <li>{edu}</li>)}
+                  </ul>
+                </div>
+                <div class="meta-box">
+                  <h3>Yabancı Diller</h3>
+                  <ul class="resume-list">
+                    {member.languages.map((lang) => <li>{lang}</li>)}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="section-title centered" style="margin-top: 120px;">
+        <span>AKADEMİK DESTEK</span>
+        <h2>Danışmanlarımız</h2>
+      </div>
+
+      <div class="member-list">
+        {experts.map((member) => (
+          <div class="member-row">
+            <div class="member-image-side">
+              <div class="image-container-block">
+                <img src={member.image} alt={member.name} class="profile-photo" loading="lazy" />
+                <div class="business-card-overlay">
+                  <div class="card-actions">
+                      <a href={`mailto:${member.email}`} title="E-posta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+                  </div>
+                  <img src={member.cardImage} alt={`${member.name} Kartvizit`} class="b-card-img" loading="lazy" />
+                </div>
+              </div>
+            </div>
+            
+            <div class="member-text-side">
+              <span class="member-row-title">{member.title}</span>
+              <h2>{member.name}</h2>
+              <p class="bio-text">{member.desc}</p>
+              
+              <div class="resume-meta-grid">
+                <div class="meta-box">
+                  <h3>Akademik Geçmiş</h3>
+                  <ul class="resume-list">
+                    {member.education.map((edu) => <li>{edu}</li>)}
+                  </ul>
+                </div>
+                <div class="meta-box">
+                  <h3>Uzmanlık Alanları & Diller</h3>
+                  <ul class="resume-list">
+                    {member.languages.map((lang) => <li>{lang}</li>)}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-header { background-color: var(--brand-red); color: var(--white); padding: 70px 15px; text-align: center; }
+  .page-header h1 { font-family: 'Playfair Display', serif; font-size: 2.8rem; margin-bottom: 15px; color: var(--white); }
+  .page-header p { color: #E5D5C5; max-width: 650px; margin: 0 auto; line-height: 1.8; font-size: 1.15rem; }
+
+  .team-section { padding: 100px 0; background-color: var(--bg-cream); }
+  
+  .member-list { display: flex; flex-direction: column; gap: 100px; margin-top: 60px; }
+  
+  /* Bİ SOL Bİ SAĞ AKAN SATIR YAPISI */
+  .member-row { display: flex; gap: 60px; align-items: center; background: var(--white); padding: 50px; border-radius: 8px; box-shadow: 0 4px 25px rgba(0,0,0,0.02); }
+  .member-row:nth-child(even) { flex-direction: row-reverse; }
+
+  /* Fotoğraf ve Kartvizit Tarafı */
+  .member-image-side { flex: 0 0 320px; width: 320px; }
+  .image-container-block { position: relative; overflow: hidden; aspect-ratio: 3/4; background-color: var(--brand-footer-dark); border-radius: 6px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+  .profile-photo { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+  .image-container-block:hover .profile-photo { transform: scale(1.03); filter: brightness(0.4); }
+
+  /* HOVER EDİNCE KARTVİZİT GELEN RECONSTRUCTED YAPI */
+  .business-card-overlay { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: space-between; align-items: center; padding: 25px 0 0 0; transform: translateY(100%); transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); z-index: 2; }
+  .image-container-block:hover .business-card-overlay { transform: translateY(0); }
+  
+  .card-actions { display: flex; gap: 15px; opacity: 0; transform: translateY(-15px); transition: all 0.3s ease 0.1s; }
+  .image-container-block:hover .card-actions { opacity: 1; transform: translateY(0); }
+  .card-actions a { width: 40px; height: 40px; background: var(--gold); color: white; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: all 0.2s ease; }
+  .card-actions a:hover { background: white; color: var(--brand-red); transform: scale(1.1); }
+  .card-actions svg { width: 18px; height: 18px; }
+  .b-card-img { width: 100%; height: auto; box-shadow: 0 -5px 20px rgba(0,0,0,0.2); border-radius: 6px 6px 0 0; }
+
+  /* Metin Tarafı */
+  .member-text-side { flex: 1; }
+  .member-row-title { display: inline-block; color: var(--gold); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; }
+  .member-text-side h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--brand-red); margin-bottom: 20px; }
+  .bio-text { color: var(--text-muted); font-size: 1.05rem; line-height: 1.8; margin-bottom: 30px; text-align: justify; }
+
+  /* Alt Özellikler Gridi */
+  .resume-meta-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 30px; border-top: 1px solid #ECE9E2; padding-top: 25px; }
+  .meta-box h3 { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: var(--brand-red); margin-bottom: 12px; }
+  .resume-list { list-style: none; }
+  .resume-list li { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 8px; line-height: 1.5; padding-left: 15px; position: relative; }
+  .resume-list li::before { content: '■'; position: absolute; left: 0; top: 2px; color: var(--gold); font-size: 0.65rem; }
+
+  /* MOBIL RESPONSIVE DÜZELTMELERİ */
+  @media (max-width: 992px) {
+    .member-row, .member-row:nth-child(even) { flex-direction: column; padding: 30px 20px; gap: 35px; text-align: center; }
+    .member-image-side { margin: 0 auto; }
+    .resume-meta-grid { grid-template-columns: 1fr; gap: 25px; text-align: left; }
+    .bio-text { text-align: left; }
+  }
+  @media (max-width: 576px) {
+    .page-header h1 { font-size: 2rem; }
+    .member-text-side h2 { font-size: 1.8rem; }
+  }
+</style>
